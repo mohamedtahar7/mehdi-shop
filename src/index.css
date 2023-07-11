@@ -4,6 +4,5 @@
 @tailwind utilities;
 body {
     font-family: 'Jost', sans-serif;
-    overflow: hidden;
     background-color: #eee;
 }
