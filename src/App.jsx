@@ -1,9 +1,12 @@
+import Home from "./components/Home"
+import Header from "./components/Header"
 function App() {
 
   return (
-    <>
-      <h1 className='text-5xl text-[#00ad98]'>Mehdi Shop</h1>
-    </>
+    <main>
+      <Header/>
+      <Home/>
+    </main>
   )
 }
 
