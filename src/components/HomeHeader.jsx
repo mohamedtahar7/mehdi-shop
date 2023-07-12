@@ -17,7 +17,7 @@ const HomeHeader = () => {
       }, []);
   return (
     <div>
-    <nav className={`py-4 z-10 ${activeNav?'bg-[#11334f]' : 'bg-none'} transition-all px-16 fixed w-full flex justify-between items-center`}>
+    <nav className={`py-4 z-10 ${activeNav?'bg-[#11334f]' : 'bg-none'} transition-all px-10 fixed w-full flex justify-between items-center`}>
         <Link to="/">
             {activeNav?<img className='w-48 h-24' src={logoW} alt="logo" />:<img className='w-48 h-24' src={logoB} alt="logo" />}
         </Link>
@@ -56,10 +56,10 @@ const HomeHeader = () => {
         {/* Mobile Nav */}
         <div className={`absolute ${mobileNav?'top-32':'-top-96'} right-7 transition-all duration-300 bg-[#11334f] py-8 px-6 rounded-lg`}>
             <ul className='flex flex-col gap-8 items-center'>
-                <li className='text-2xl transition font-medium text-[#fff] '><a href='#'>Home</a></li>
-                <li className='text-2xl transition font-medium text-[#fff] '><a href='#'>About</a></li>
-                <li className='text-2xl transition font-medium text-[#fff] '><a href='#'>Products</a></li>
-                <li className='text-2xl transition font-medium text-[#fff] '><a href='#'>Contact Us</a></li>
+                <li className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#'>Home</a></li>
+                <li className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#about'>About</a></li>
+                <li className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#products'>Products</a></li>
+                <li className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#contact'>Contact Us</a></li>
             </ul>
         </div>
     </nav>

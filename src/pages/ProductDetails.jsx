@@ -11,19 +11,23 @@ const ProductDetails = () => {
     <div>
       <Header/>
       {/* Imgs */}
-      <div className='py-[16rem] px-16 flex items-center'>
-        <div>
-        <div className='flex flex-col gap-6'>
+      <div className='py-[16rem] px-16'>
+        <div className='flex'>
+          <div className='flex flex-1 flex-col gap-6'>
             {shownImg===1?<img src={product.images[0].image} alt="image" className='w-[30%] rounded-lg'/> : <img src={product.images[1].image} alt="image" className='w-[30%] rounded-lg' />}
             <div className='flex flex-row gap-4'>
                 {product.images.map((image,index)=>(
                     <img onClick={()=>setShownImg(index)} src={image.image} alt="image" className='w-[8%] rounded-lg cursor-pointer hover:opacity-80' key={index} />
                 ))}
             </div>
+          </div>
         </div>
+        {/* Text */}
+        <div className='flex-1'>
+            <h1 className='text-6xl w-auto'>{product.name}</h1>
         </div>
       </div>
-      </div>
+    </div>
 
   )
 }

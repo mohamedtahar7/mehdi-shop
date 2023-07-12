@@ -56,10 +56,10 @@ const Header = () => {
         {/* Mobile Nav */}
         <div className={`absolute ${mobileNav?'top-32':'-top-96'} right-7 transition-all duration-300 bg-[#11334f] py-8 px-6 rounded-lg`}>
             <ul className='flex flex-col gap-8 items-center'>
-                <li className='text-2xl transition font-medium text-[#fff] '><a href='#'>Home</a></li>
-                <li className='text-2xl transition font-medium text-[#fff] '><a href='#'>About</a></li>
-                <li className='text-2xl transition font-medium text-[#fff] '><a href='#'>Products</a></li>
-                <li className='text-2xl transition font-medium text-[#fff] '><a href='#'>Contact Us</a></li>
+                <li className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#'>Home</a></li>
+                <li className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#about'>About</a></li>
+                <li className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#products'>Products</a></li>
+                <li className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#contact'>Contact Us</a></li>
             </ul>
         </div>
     </nav>
