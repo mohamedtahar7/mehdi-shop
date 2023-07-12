@@ -6,7 +6,7 @@ import {HiArrowRight} from 'react-icons/hi'
 import {FiMenu} from 'react-icons/fi'
 import {CgClose} from 'react-icons/cg'
 import { useState,useEffect } from 'react'
-const Header = () => {
+const HomeHeader = () => {
     const [activeCart,setActiveCart] = useState(false)
     const [mobileNav,setMobileNav] = useState(false)
     const [activeNav,setActiveNav] = useState(false)
@@ -24,13 +24,13 @@ const Header = () => {
         <div className='lg:block hidden'>
          <div>
             <ul className='flex items-center gap-12'>
-                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':'text-white'} transition font-medium text-[#11334f] `}><Link to='/'>Home</Link></li>
-                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':'text-white'} transition font-medium text-[#11334f] `}><Link to='/#about'>About</Link></li>
-                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':'text-white'} transition font-medium text-[#11334f] `}><a href='#products'>Products</a></li>
-                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':'text-white'} transition font-medium text-[#11334f] `}><Link to='/#contact'>Contact Us</Link></li>
+                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-medium text-[#fff] `}><Link to='/'>Home</Link></li>
+                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-medium text-[#fff] `}><Link to='/#about'>About</Link></li>
+                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-medium text-[#fff] `}><a href='#products'>Products</a></li>
+                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-medium text-[#fff] `}><Link to='/#contact'>Contact Us</Link></li>
                 <li onClick={()=>{setActiveCart(true)}}>
                   <a className='relative group cursor-pointer'>
-                    <BsCart className={`text-[#11334f] ${!activeNav?'group-hover:text-[#11334f] text-[#11334f]' : 'text-white'} transition`} size={30}/>
+                    <BsCart className={`text-[#fff] ${!activeNav?'group-hover:text-[#11334f]' : ''} transition`} size={30}/>
                     <p className={`absolute -top-3 -right-3 p-1 rounded-full text-sm ${!activeNav?'bg-[#11334f] text-white' : 'text-[#11334f] bg-white'} px-2 py-[0.125rem] transtition`}>0</p>
                   </a>
                 </li>
@@ -48,7 +48,7 @@ const Header = () => {
           <HiArrowRight onClick={()=>{setActiveCart(false)}} size={30} className='text-black cursor-pointer'/>
         </div>
         <div className='px-4 py-4 flex flex-col gap-3 absolute bottom-0 left-0 right-0'>
-            <a href='#' className='w-full py-4 px-2 text-center text-xl font-medium rounded-lg transition-all text-[#11334f] bg-[#fff]' onClick={()=>setActiveCart(false)}>Continue Shopping</a>
+            <a href='#' className='w-full py-4 px-2 text-center text-xl font-medium rounded-lg text-[#11334f] bg-[#fff]' onClick={()=>setActiveCart(false)}>Continue Shopping</a>
             <a href='#' className='w-full py-4 px-2 text-center text-xl font-medium rounded-lg text-white bg-[#11334f]'>Checkout</a>
 
         </div>
@@ -67,4 +67,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default HomeHeader

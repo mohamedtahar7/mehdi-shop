@@ -1,13 +1,17 @@
-import Home from "./components/Home"
-import Header from "./components/Header"
-import Products from "./components/Products"
+import Header from "./components/HomeHeader"
+import ProductDetails from "./pages/ProductDetails"
+import HomePage from "./pages/HomePage"
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom"
 function App() {
 
   return (
     <main>
-      <Header/>
-      <Home/>
-      <Products/>
+      <Router>
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/product/:id" element={<ProductDetails/>}/>
+      </Routes>
+      </Router>
     </main>
   )
 }
