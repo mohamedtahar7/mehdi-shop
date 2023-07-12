@@ -24,10 +24,10 @@ const HomeHeader = () => {
         <div className='lg:block hidden'>
          <div>
             <ul className='flex items-center gap-12'>
-                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-medium text-[#fff] `}><Link to='/'>Home</Link></li>
-                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-medium text-[#fff] `}><Link to='/#about'>About</Link></li>
-                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-medium text-[#fff] `}><a href='#products'>Products</a></li>
-                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-medium text-[#fff] `}><Link to='/#contact'>Contact Us</Link></li>
+                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><Link to='/'>Home</Link></li>
+                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><Link to='/#about'>About</Link></li>
+                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><a href='#products'>Products</a></li>
+                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><Link to='/#contact'>Contact Us</Link></li>
                 <li onClick={()=>{setActiveCart(true)}}>
                   <a className='relative group cursor-pointer'>
                     <BsCart className={`text-[#fff] ${!activeNav?'group-hover:text-[#11334f]' : ''} transition`} size={30}/>
