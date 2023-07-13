@@ -10,7 +10,7 @@ import {FiMenu} from 'react-icons/fi'
 import {CgClose} from 'react-icons/cg'
 import { useState,useEffect } from 'react'
 import CartItem from './CartItem'
-const HomeHeader = () => {
+const Header = () => {
     const [activeCart,setActiveCart] = useState(false)
     const [mobileNav,setMobileNav] = useState(false)
     const [activeNav,setActiveNav] = useState(false)
@@ -80,4 +80,4 @@ const HomeHeader = () => {
   )
 }
 
-export default HomeHeader
+export default Header

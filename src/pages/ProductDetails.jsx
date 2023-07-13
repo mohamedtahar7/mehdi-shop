@@ -8,7 +8,7 @@ import Header from '../components/Header'
 const ProductDetails = () => {
     const {id} = useParams()
     const {addToCart} = useContext(CartContext);
-    const product = products.find((item)=>item.id === parseInt(id))
+    const product = products.find((item)=>item.id === id)
     const {name,price,mainImg} = product
     const productToCart = {name,price,mainImg}
     const [shownImg,setShownImg] = useState(0)
