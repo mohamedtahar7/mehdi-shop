@@ -23,15 +23,15 @@ const ProductDetails = () => {
             </div>
         </div>
         {/* text */}
-        <div className='absolute top-[18rem] left-[48rem]'>
+        <div className='-ml-[80rem] -mt-40'>
             <h1 className='text-6xl text-[#11334f] mb-10'>{product.name}</h1>
             <div className='flex items-center gap-4 mb-8'>
                 <h3 className='text-[#11334f] text-lg font-normal'>Quantity :</h3>
-                <input value={productNum} onChange={(e)=>{e.target.value>0 && setProductNum(e.target.value)}} type="number" className='w-20 py-1 px-4 rounded-xl' />
+                <input value={productNum} onChange={(e)=>{e.target.value>0 && setProductNum(e.target.value)}} type="number" className='w-16 py-1 px-4 rounded-xl' />
             </div>
             <p className='text-xl font- w-[60%] text-[#11334f]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad deserunt fugiat perspiciatis assumenda sunt consequuntur numquam delectus tempore aliquam iusto ducimus voluptatibus commodi, sint, dolores molestiae aut quo veniam explicabo!</p>
             <p className='text-xl text-[#11334f] mt-8'>Price : {product.price} DA</p>
-            <button className='py-3 px-8 bg-[#11334f] text-white hover:opacity-80 transition-all mt-8'>Add To Cart</button>
+            <button className='py-3 px-8 bg-[#11334f] cursor-pointer text-white hover:opacity-80 transition-all mt-8'>Add To Cart</button>
         </div>
       </div>
     </div>

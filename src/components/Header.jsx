@@ -47,10 +47,12 @@ const Header = () => {
           <h3 className='text-2xl font-medium'>My Cart (0)</h3>
           <HiArrowRight onClick={()=>{setActiveCart(false)}} size={30} className='text-black cursor-pointer'/>
         </div>
+        <div>
+          {cart.map()}
+        </div>
         <div className='px-4 py-4 flex flex-col gap-3 absolute bottom-0 left-0 right-0'>
             <a href='#' className='w-full py-4 px-2 text-center text-xl font-medium rounded-lg transition-all text-[#11334f] bg-[#fff]' onClick={()=>setActiveCart(false)}>Continue Shopping</a>
             <a href='#' className='w-full py-4 px-2 text-center text-xl font-medium rounded-lg text-white bg-[#11334f]'>Checkout</a>
-
         </div>
         </div>
         {/* Mobile Nav */}
