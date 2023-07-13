@@ -5,9 +5,9 @@ import './index.css'
 import CartProvider from './contexts/CartContext.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <CartProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
   </CartProvider>
   ,
 )
