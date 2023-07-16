@@ -6,9 +6,9 @@ import {BsInstagram,BsFacebook,BsTiktok} from 'react-icons/bs'
 import logoW from '../assets/LOGO VIDE 2.png'
 const Footer = () => {
   return (
-    <div className=' px-36 py-20 bg-[#11334f]'>
-      <div className='grid justify-items-center sm:grid-cols-2 md:grid-cols-3 grid-cols-1 '>  
-        <div>
+    <div className='px-16 py-20 bg-[#11334f]'>
+      <div className='flex mb-10 lg:flex-row md:justify-between flex-col gap-10 justify-center'>  
+        <div className='lg:w-[50%]'>
           <img className='w-48' src={logoW} alt="" />
           <p className='text-lg leading-8 text-[#eee] mt-6'>UniConfort Fabricant algérien de Mobiliers, depuis 1996. C’est une entreprise algérienne, spécialisés en aménagement des Hôtels, Restaurants et Collectivités.</p>
         </div>

@@ -5,6 +5,7 @@ import { useContext } from 'react'
 import { products } from '../utils/products'
 import { CartContext } from '../contexts/CartContext'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 const ProductDetails = () => {
     const {id} = useParams()
     const {addToCart} = useContext(CartContext);
@@ -16,7 +17,7 @@ const ProductDetails = () => {
     <div>
       <Header/>
       {/* Imgs */}
-      <div className='py-[16rem] relative px-16 flex items-center'>
+      <div className='py-[16rem] px-16 flex items-center'>
         {/* imgs */}
         <div className='flex relative flex-col gap-6'>
             {shownImg===1?<img src={product.images[0].image} alt="image" className='w-[80%] rounded-lg'/> : <img src={product.images[1].image} alt="image" className='w-[80%] rounded-lg' />}
@@ -34,6 +35,7 @@ const ProductDetails = () => {
             <button onClick={()=>addToCart(product,id)} className='py-3 px-8 bg-[#11334f] text-white hover:opacity-80 transition-all'>Add To Cart</button>
         </div>
       </div>
+      <Footer/>
     </div>
 
   )

@@ -18,7 +18,7 @@ export const chairs =  [
         ],
     },
     {
-        name:'reclinable-chair',
+        name:'Reclinable Chair',
         price:'5800.00',
         id:'reclinable-chair',
         images:[

@@ -22,7 +22,7 @@ const HomeHeader = () => {
       }, []);
   return (
     <div>
-    <nav className={`py-4 z-10 ${activeNav?'bg-[#11334f]' : 'bg-none'} transition-all px-24 fixed w-full flex justify-between items-center`}>
+    <nav className={`py-4 z-10 ${activeNav?'bg-[#11334f]' : 'bg-none'} transition-all px-16 fixed w-full flex justify-between items-center`}>
         <Link to="/">
             {activeNav?<img className='w-48' src={logoW} alt="logo" />:<img className='w-48' src={logoB} alt="logo" />}
         </Link>

@@ -22,7 +22,7 @@ const Header = () => {
       }, []);
   return (
     <div>
-    <nav className={`py-4 z-10 ${activeNav?'bg-[#11334f]' : 'bg-none'} transition-all px-24 fixed w-full flex justify-between items-center`}>
+    <nav className={`py-4 z-10 ${activeNav?'bg-[#11334f]' : 'bg-none'} transition-all px-16 fixed w-full flex justify-between items-center`}>
         <Link to="/">
             {activeNav?<img className='w-48' src={logoW} alt="logo" />:<img className='w-48' src={logoB} alt="logo" />}
         </Link>
@@ -44,7 +44,7 @@ const Header = () => {
         </div>
         <div className='lg:hidden flex items-center gap-6'>
             {mobileNav?<CgClose onClick={()=>setMobileNav(false)} size={40} className='text-white cursor-pointer'/>:<FiMenu onClick={()=>setMobileNav(true)} size={35} className='text-white cursor-pointer'/>}
-            <a onClick={()=>setActiveCart(true)} className='relative group cursor-pointer'><BsCart className='text-[#fff] group-hover:text-[#091a28] transition' size={30}/> <p className='absolute -top-3 -right-3 p-1 rounded-full text-sm bg-[#11334f] px-2 py-[0.125rem] group-hover:bg-[#091a28] transtition text-white'>0</p></a>
+            <a onClick={()=>setActiveCart(true)} className='relative group cursor-pointer'><BsCart className='text-[#fff] group-hover:text-[#091a28] transition' size={30}/> <p className='absolute -top-3 -right-3 p-1 rounded-full text-sm bg-[#11334f] px-2 py-[0.125rem] group-hover:bg-[#091a28] transtition text-white'>{itemAmount}</p></a>
         </div>
             {/* Cart */}
         <div className={`absolute z-[20] ${activeCart?'top-0 right-0' : 'top-0 -right-full'} overflow-hidden h-[100vh] transition-all drop-shadow-lg lg:w-[25vw] w-[100vw] md:w-[40vw] sm:w-[50vw] bg-[#eee]`}>
@@ -62,8 +62,8 @@ const Header = () => {
           ))}
         </div>
         <div className='px-4 py-4 flex flex-col gap-3 absolute bottom-0 left-0 right-0'>
-            <a href='#' className='w-full py-4 px-2 text-center text-xl font-medium rounded-lg text-[#11334f] bg-[#fff]' onClick={()=>setActiveCart(false)}>Continue Shopping</a>
-            <a href='#' className='w-full py-4 px-2 text-center text-xl font-medium rounded-lg text-white bg-[#11334f]'>Checkout</a>
+            <a className='w-full cursor-pointer py-4 px-2 text-center text-xl font-medium rounded-lg text-[#11334f] bg-[#fff]' onClick={()=>setActiveCart(false)}>Continue Shopping</a>
+            <Link to={'/checkout'} className='w-full py-4 px-2 text-center text-xl font-medium rounded-lg text-white bg-[#11334f]'>Checkout</Link>
         </div>
         </div>
         {/* Mobile Nav */}
