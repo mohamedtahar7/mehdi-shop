@@ -7,7 +7,7 @@ const ProductCard = ({image,price,name,id}) => {
   const {addToCart} = useContext(CartContext)
   const product = {image,price,name,id}
   return (
-    <div className='relative group overflow-y-hidden'>
+    <div className='relative group w-fit overflow-y-hidden'>
         <div className='group-hover:opacity-80 group-hover:cursor-pointer'>
           <img className='w-[90%] h-[90%] rounded-xl' src={image} alt="image" />
           <div className='text-center py-6'>

@@ -17,22 +17,22 @@ const ProductDetails = () => {
     <div>
       <Header/>
       {/* Imgs */}
-      <div className='py-[16rem] px-16 flex items-center'>
+      <div className='py-[16rem] px-16 flex lg:flex-row flex-col justify-center gap-4 items-center'>
         {/* imgs */}
         <div className='flex relative flex-col gap-6'>
             {shownImg===1?<img src={product.images[0].image} alt="image" className='w-[80%] rounded-lg'/> : <img src={product.images[1].image} alt="image" className='w-[80%] rounded-lg' />}
             <div className='flex flex-row gap-4'>
                 {product.images.map((image,index)=>(
-                    <img onClick={()=>setShownImg(index)} src={image.image} alt="image" className='w-[15%] rounded-lg cursor-pointer hover:opacity-80' key={index} />
+                    <img onClick={()=>setShownImg(index)} src={image.image} alt="image" className='sm:w-[15%] w-[25%] rounded-lg cursor-pointer hover:opacity-80' key={index} />
                 ))}
             </div>
         </div>
         {/* text */}
-        <div className='w-[350rem]'>
-            <h1 className='text-6xl text-[#11334f] mb-10'>{product.name}</h1>
-            <p className='text-xl font- w-[60%] text-[#11334f]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad deserunt fugiat perspiciatis assumenda sunt consequuntur numquam delectus tempore aliquam iusto ducimus voluptatibus commodi, sint, dolores molestiae aut quo veniam explicabo!</p>
+        <div className='lg:w-[350rem] w-fit'>
+            <h1 className='lg:text-6xl text-4xl font-medium text-[#11334f] mb-10'>{product.name}</h1>
+            <p className='text-xl font- lg:w-[60%] text-[#11334f]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad deserunt fugiat perspiciatis assumenda sunt consequuntur numquam delectus tempore aliquam iusto ducimus voluptatibus commodi, sint, dolores molestiae aut quo veniam explicabo!</p>
             <p className='text-xl text-[#11334f] mt-8 mb-8'>Price : {product.price} DA</p>
-            <button onClick={()=>addToCart(product,id)} className='py-3 px-8 bg-[#11334f] text-white hover:opacity-80 transition-all'>Add To Cart</button>
+            <button onClick={()=>addToCart(productToCart,id)} className='py-3 px-8 bg-[#11334f] text-white hover:opacity-80 transition-all'>Add To Cart</button>
         </div>
       </div>
       <Footer/>

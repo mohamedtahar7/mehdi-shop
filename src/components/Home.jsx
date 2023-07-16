@@ -3,9 +3,9 @@ import heroImg from '../assets/photo 03.png'
 
 const Home = () => {
   return (
-    <section className='py-80 px-20 bg-[url("https://images.unsplash.com/photo-1639259885918-b8ee9b8374b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1567&q=80")] bg-no-repeat bg-center bg-cover bg-fixed h-[100vh] w-full'>
+    <section className='sm:py-80 py-52 px-20 bg-[url("https://images.unsplash.com/photo-1639259885918-b8ee9b8374b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1567&q=80")] bg-no-repeat bg-center bg-cover bg-fixed h-[100vh] w-full'>
         <div className='text-center'>
-            <h1 className='sm:text-8xl text-[3.3rem] text-white font-semibold mb-12'>
+            <h1 className='md:text-8xl text-[3.3rem] text-white font-semibold mb-12'>
             Discover Timeless Elegance
             </h1>
             <p className='text-white mb-12 text-2xl font-medium'>Transform Your Space with Our Exquisite Furniture Collection.</p>

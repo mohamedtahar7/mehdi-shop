@@ -1,0 +1,20 @@
+export const banquettes = [
+    {
+        name:'CozySeat',
+        price:'16000.00',
+        id:'cozyseat',
+        images:[
+           {image:'/src/assets/banquettes/product-1.jpg',},
+           {image:'/src/assets/banquettes/product-1-1.jpg'}
+        ],
+    },
+    {
+        name:'Relaxlounge',
+        price:'17500.00',
+        id:'relaxlounge',
+        images:[
+           {image:'/src/assets/banquettes/product-2.jpg',},
+           {image:'/src/assets/banquettes/product-2-1.jpg'}
+        ],
+    }
+]
