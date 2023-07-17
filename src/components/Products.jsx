@@ -14,12 +14,12 @@ const Products = () => {
   const [banq,setBanq] = useState(false)
   return (
     <section id='products' className='h-auto py-16 px-20'>
-        <h1 data-aos="fade-left" className='sm:text-5xl text-3xl text-[#11334f] text-center'>Our Products</h1>
+        <h1 data-aos="fade-left" className='sm:text-5xl text-3xl text-[#11334f] text-center'>Nos Produits</h1>
         <div className='flex sm:flex-row flex-col justify-center gap-4 mt-6 items-center'>
           <h3 className='text-2xl text-[#11334f]'>Filter : </h3>
           <div className='flex md:flex-row flex-col sm:w-auto w-fit gap-4 items-center'>
-            <p onClick={()=>{setAll(true);setChair(false);setTable(false);setMeuble(false);setBanq(false)}} className={`text-xl transition-all cursor-pointer ${all?'text-white bg-[#11334f]': 'text-[#11334f] bg-[#eee]'} px-4 rounded-lg border border-[#11334f]`} >All</p>
-            <p onClick={()=>{setChair(true);setAll(false);setTable(false);setMeuble(false);setBanq(false)}} className={`text-xl transition-all cursor-pointer ${chair?'text-white bg-[#11334f]': 'text-[#11334f] bg-[#eee]'} px-4 rounded-lg border border-[#11334f]`} >Chairs</p>
+            <p onClick={()=>{setAll(true);setChair(false);setTable(false);setMeuble(false);setBanq(false)}} className={`text-xl transition-all cursor-pointer ${all?'text-white bg-[#11334f]': 'text-[#11334f] bg-[#eee]'} px-4 rounded-lg border border-[#11334f]`} >Tout</p>
+            <p onClick={()=>{setChair(true);setAll(false);setTable(false);setMeuble(false);setBanq(false)}} className={`text-xl transition-all cursor-pointer ${chair?'text-white bg-[#11334f]': 'text-[#11334f] bg-[#eee]'} px-4 rounded-lg border border-[#11334f]`} >Chaises</p>
             <p onClick={()=>{setTable(true);setChair(false);setAll(false);setMeuble(false);setBanq(false)}} className={`text-xl transition-all cursor-pointer ${table?'text-white bg-[#11334f]': 'text-[#11334f] bg-[#eee]'} px-4 rounded-lg border border-[#11334f]`} >Tables</p>
             <p onClick={()=>{setMeuble(true);setTable(false);setChair(false);setAll(false);setBanq(false)}} className={`text-xl transition-all cursor-pointer ${meuble?'text-white bg-[#11334f]': 'text-[#11334f] bg-[#eee]'} px-4 rounded-lg border border-[#11334f]`} >Meubles</p>
             <p onClick={()=>{setBanq(true);setMeuble(false);setTable(false);setChair(false);setAll(false)}} className={`text-xl transition-all cursor-pointer ${banq?'text-white bg-[#11334f]': 'text-[#11334f] bg-[#eee]'} px-4 rounded-lg border border-[#11334f]`} >Banquettes</p>

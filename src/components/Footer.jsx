@@ -13,7 +13,7 @@ const Footer = () => {
           <p className='text-lg leading-8 text-[#eee] mt-6'>UniConfort Fabricant algérien de Mobiliers, depuis 1996. C’est une entreprise algérienne, spécialisés en aménagement des Hôtels, Restaurants et Collectivités.</p>
         </div>
         <div className='pt-4 flex-col flex gap-3'>
-            <h3 className='text-[#eee] font-semibold text-xl'>Contact Us</h3>
+            <h3 className='text-[#eee] font-semibold text-xl'>Contactez Nous</h3>
             <div className='flex items-center gap-3 mt-3'>
               <AiFillHome size={25} className='text-[#eee]'/>
               <h4 className='text-lg text-[#eee]'>UniConfort Aïn Benian, Aïn Benian, Algérie</h4>
@@ -28,7 +28,7 @@ const Footer = () => {
             </div>
         </div>
         <div className='flex pt-4 flex-col gap-6'>
-            <h3 className='text-[#eee] text-xl font-semibold'>Social Media</h3>
+            <h3 className='text-[#eee] text-xl font-semibold'>Réseaux Sociaux</h3>
             <div className='flex items-center gap-8'>
                <a target='_blank' href="https://www.instagram.com/uniconfort.dz/">
                  <BsInstagram size={40} className='text-[#eee]'/>

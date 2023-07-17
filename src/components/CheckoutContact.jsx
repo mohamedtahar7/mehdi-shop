@@ -10,11 +10,8 @@ const CheckoutContact = ({sucessOrder,setSuccessOrder}) => {
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs.sendForm('service_alw2bdj', 'template_22vqklb', form.current, 'wBPtSopVRqmmnpaTC')
       .then((result) => {
-          setSuccessOrder(true);
-          setTimeout(setSuccessOrder(false),2000)
       }, (error) => {
           console.log(error.text);
       });
@@ -46,7 +43,7 @@ const CheckoutContact = ({sucessOrder,setSuccessOrder}) => {
         <input defaultValue={total} name='total_price' type='number' className='hidden py-2 px-4 rounded-lg text-xl placeholder-gray-400 border focus:border-[2px] border-[#11334f]' placeholder='Your Phone Number' />
       </div>
       </div>
-      <button onClick={sendEmail} className='text-center py-2 px-4 bg-[#11334f] text-xl rounded-lg hover:opacity-80 transition-all text-white w-fit'>Submit Request</button>
+      <button onClick={()=>{sendEmail;setSuccessOrder(true);setTimeout(setSuccessOrder(false),3000)}} className='text-center py-2 px-4 bg-[#11334f] text-xl rounded-lg hover:opacity-80 transition-all text-white w-fit'>Send Order</button>
     </form>
   )
 }
