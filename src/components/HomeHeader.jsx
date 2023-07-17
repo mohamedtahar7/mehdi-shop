@@ -70,7 +70,7 @@ const HomeHeader = () => {
         </div>}
         </div>
         {/* Mobile Nav */}
-        <div className={`absolute ${mobileNav?'top-32':'-top-96'} right-7 transition-all duration-300 bg-[#11334f] py-8 px-6 rounded-lg`}>
+        <div className={`absolute ${mobileNav?'top-24':'-top-96'} right-7 transition-all duration-300 bg-[#11334f] py-8 px-6 rounded-lg`}>
             <ul className='flex flex-col gap-8 items-center'>
                 <li onClick={()=>setMobileNav(false)} className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#'>Home</a></li>
                 <li onClick={()=>setMobileNav(false)} className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#about'>About</a></li>

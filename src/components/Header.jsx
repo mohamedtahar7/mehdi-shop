@@ -43,8 +43,8 @@ const Header = () => {
         </div>
         </div>
         <div className='lg:hidden flex items-center gap-6'>
-            {mobileNav?<CgClose onClick={()=>setMobileNav(false)} size={40} className='text-white cursor-pointer'/>:<FiMenu onClick={()=>setMobileNav(true)} size={35} className='text-white cursor-pointer'/>}
-            <a onClick={()=>setActiveCart(true)} className='relative group cursor-pointer'><BsCart className='text-[#fff] group-hover:text-[#091a28] transition' size={30}/> <p className='absolute -top-3 -right-3 p-1 rounded-full text-sm bg-[#11334f] px-2 py-[0.125rem] group-hover:bg-[#091a28] transtition text-white'>{itemAmount}</p></a>
+            {mobileNav?<CgClose onClick={()=>setMobileNav(false)} size={40} className={`${activeNav?'text-white' : 'text-[#11334f]'} cursor-pointer`}/>:<FiMenu onClick={()=>setMobileNav(true)} size={35} className={`${activeNav?'text-white' : 'text-[#11334f]'} cursor-pointer`}/>}
+            <a onClick={()=>setActiveCart(true)} className='relative group cursor-pointer'><BsCart className={`${activeNav?'text-white' : 'text-[#11334f]'} group-hover:text-[#091a28] transition`} size={30}/> <p className='absolute -top-3 -right-3 p-1 rounded-full text-sm bg-[#11334f] px-2 py-[0.125rem] group-hover:bg-[#091a28] transtition text-white'>{itemAmount}</p></a>
         </div>
             {/* Cart */}
         <div className={`absolute z-[20] ${activeCart?'top-0 right-0' : 'top-0 -right-full'} overflow-auto h-[100vh] transition-all drop-shadow-lg lg:w-[25vw] w-[100vw] md:w-[40vw] sm:w-[50vw] bg-[#eee]`}>
@@ -67,12 +67,12 @@ const Header = () => {
         </div>}
         </div>
         {/* Mobile Nav */}
-        <div className={`absolute ${mobileNav?'top-32':'-top-96'} right-7 transition-all duration-300 bg-[#11334f] py-8 px-6 rounded-lg`}>
+        <div className={`absolute ${mobileNav?'top-24':'-top-96'} right-7 transition-all duration-300 bg-[#11334f] py-8 px-6 rounded-lg`}>
             <ul className='flex flex-col gap-8 items-center'>
-                <li className='text-2xl transition font-medium text-[#fff] '><Link className='cursor-pointer' to={'/'}>Home</Link></li>
-                <li className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#about'>About</a></li>
-                <li className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#products'>Products</a></li>
-                <li className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#contact'>Contact Us</a></li>
+                <li className={`text-2xl transition font-medium text-[#fff]`} ><Link className='cursor-pointer' to={'/'}>Home</Link></li>
+                <li className={`text-2xl transition font-medium text-[#fff]`} ><a className='cursor-pointer' href='#about'>About</a></li>
+                <li className={`text-2xl transition font-medium text-[#fff]`} ><a className='cursor-pointer' href='#products'>Products</a></li>
+                <li className={`text-2xl transition font-medium text-[#fff]`} ><a className='cursor-pointer' href='#contact'>Contact Us</a></li>
             </ul>
         </div>
     </nav>

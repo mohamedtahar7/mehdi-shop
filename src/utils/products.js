@@ -83,5 +83,5 @@ export const products = [
                {image:'/src/assets/banquettes/product-2.jpg',},
                {image:'/src/assets/banquettes/product-2-1.jpg'}
             ],
-        }
+        },
 ]
