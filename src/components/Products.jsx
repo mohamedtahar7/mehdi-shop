@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductCard from './ProductCard'
+import Pagination from './Pagination'
 import { useState } from 'react'
 import { chairs } from '../utils/chairs'
 import { tables } from '../utils/tables'
@@ -7,6 +8,11 @@ import { products } from '../utils/products'
 import { meubles } from '../utils/meubles'
 import {banquettes} from '../utils/banquettes' 
 const Products = () => {
+  const [currentPage,setCurrentPage] = useState(1)
+  const [productPerPage,setProductPerPage] = useState(6)
+  const lastProductIndex = currentPage * productPerPage;
+  const firstProductIndex = lastProductIndex - productPerPage;
+  const currentProducts = products.slice(firstProductIndex,lastProductIndex)
   const [all,setAll] = useState(true);
   const [chair,setChair] = useState(false);
   const [table,setTable] = useState(false);
@@ -27,10 +33,11 @@ const Products = () => {
         </div>
         {all && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
-          {products.map((product)=>(
+          {currentProducts.map((product)=>(
             <ProductCard id={product.id} key={product.id} name={product.name} price={product.price}
             image={product.images[0].image}/>
-          ))}
+            ))}
+            <Pagination totalProducts={products.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>) }
         {chair && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
