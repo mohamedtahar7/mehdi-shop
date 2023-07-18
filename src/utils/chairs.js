@@ -1,6 +1,6 @@
 export const chairs =  [
     {
-        name:'Regazo Chair',
+        name:'Regazo Chaise',
         price:'8900.00',
         id:'regazo-chair',
         images:[
@@ -9,7 +9,7 @@ export const chairs =  [
         ],
     },
     {
-        name:'Pachonita Chair',
+        name:'Pachonita Chaise',
         price:'6890.00',
         id:'pachonita-chair',
         images:[
@@ -18,7 +18,7 @@ export const chairs =  [
         ],
     },
     {
-        name:'Reclinable Chair',
+        name:'Reclinable Chaise',
         price:'5800.00',
         id:'reclinable-chair',
         images:[

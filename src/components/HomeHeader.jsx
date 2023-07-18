@@ -52,7 +52,7 @@ const HomeHeader = () => {
             {/* Cart */}
         <div className={`absolute z-[20] ${activeCart?'top-0 right-0' : 'top-0 -right-full'} overflow-y-auto h-[100vh] transition-all drop-shadow-lg lg:w-[25vw] w-[100vw] md:w-[40vw] sm:w-[50vw] bg-[#eee]`}>
         <div className='py-8 px-8 flex justify-between items-center text-[#11334f]'>
-          <h3 className='text-2xl font-medium text-[#11334f]'>My Cart ({itemAmount})</h3>
+          <h3 className='text-2xl font-medium text-[#11334f]'>Mon Panier ({itemAmount})</h3>
           <div className='flex items-center gap-4'>
             <FaTrashAlt onClick={()=>clearCart()}  size={25} className='text-[#11334f] cursor-pointer'/>
             <HiArrowRight onClick={()=>{setActiveCart(false)}} size={30} className='text-[#11334f] cursor-pointer'/>
@@ -65,12 +65,12 @@ const HomeHeader = () => {
           ))}
         </div>
         {itemAmount>0 && <div className='px-4 py-4 flex flex-col gap-3 absolute -bottom-50 left-0 right-0'>
-            <p className='w-full cursor-pointer py-4 px-2 text-center text-xl font-medium rounded-lg text-[#11334f] bg-[#fff]' onClick={()=>setActiveCart(false)}>Continue Shopping</p>
-            <Link to={'/checkout'} className='w-full py-4 px-2 text-center text-xl font-medium rounded-lg text-white bg-[#11334f]'>Checkout</Link>
+            <p className='w-full cursor-pointer py-4 px-2 text-center text-xl font-medium text-[#11334f] bg-[#fff]' onClick={()=>setActiveCart(false)}>Continuer Vos Achats</p>
+            <Link to={'/checkout'} className='w-full py-4 px-2 text-center text-xl font-medium text-white bg-[#11334f]'>Commander</Link>
         </div>}
         </div>
         {/* Mobile Nav */}
-        <div className={`absolute ${mobileNav?'top-24':'-top-96'} right-7 transition-all duration-300 bg-[#11334f] py-8 px-6 rounded-lg`}>
+        <div className={`absolute ${mobileNav?'top-28':'-top-96'} right-7 transition-all duration-300 bg-[#11334f] py-8 px-6`}>
             <ul className='flex flex-col gap-8 items-center'>
                 <li onClick={()=>setMobileNav(false)} className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#'>Accueil</a></li>
                 <li onClick={()=>setMobileNav(false)} className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#about'>A Propos</a></li>

@@ -7,60 +7,56 @@ import { tables } from '../utils/tables'
 import { products } from '../utils/products'
 import { meubles } from '../utils/meubles'
 import {banquettes} from '../utils/banquettes' 
+import { categories } from '../utils/categories'
 const Products = () => {
+  const [category,setCategory] = useState('Tout')
   const [currentPage,setCurrentPage] = useState(1)
-  const [productPerPage,setProductPerPage] = useState(6)
+  const productPerPage = 6
   const lastProductIndex = currentPage * productPerPage;
   const firstProductIndex = lastProductIndex - productPerPage;
   const currentProducts = products.slice(firstProductIndex,lastProductIndex)
-  const [all,setAll] = useState(true);
-  const [chair,setChair] = useState(false);
-  const [table,setTable] = useState(false);
-  const [meuble,setMeuble] = useState(false)
-  const [banq,setBanq] = useState(false)
   return (
     <section id='products' className='h-auto py-16 px-20'>
         <h1 data-aos="fade-left" className='sm:text-5xl text-3xl text-[#11334f] text-center'>Nos Produits</h1>
         <div className='flex sm:flex-row flex-col justify-center gap-4 mt-6 items-center'>
           <h3 className='text-2xl text-[#11334f]'>Filter : </h3>
-          <div className='flex md:flex-row flex-col sm:w-auto w-fit gap-4 items-center'>
-            <p onClick={()=>{setAll(true);setChair(false);setTable(false);setMeuble(false);setBanq(false)}} className={`text-xl transition-all cursor-pointer ${all?'text-white bg-[#11334f]': 'text-[#11334f] bg-[#eee]'} px-4 rounded-lg border border-[#11334f]`} >Tout</p>
-            <p onClick={()=>{setChair(true);setAll(false);setTable(false);setMeuble(false);setBanq(false)}} className={`text-xl transition-all cursor-pointer ${chair?'text-white bg-[#11334f]': 'text-[#11334f] bg-[#eee]'} px-4 rounded-lg border border-[#11334f]`} >Chaises</p>
-            <p onClick={()=>{setTable(true);setChair(false);setAll(false);setMeuble(false);setBanq(false)}} className={`text-xl transition-all cursor-pointer ${table?'text-white bg-[#11334f]': 'text-[#11334f] bg-[#eee]'} px-4 rounded-lg border border-[#11334f]`} >Tables</p>
-            <p onClick={()=>{setMeuble(true);setTable(false);setChair(false);setAll(false);setBanq(false)}} className={`text-xl transition-all cursor-pointer ${meuble?'text-white bg-[#11334f]': 'text-[#11334f] bg-[#eee]'} px-4 rounded-lg border border-[#11334f]`} >Meubles</p>
-            <p onClick={()=>{setBanq(true);setMeuble(false);setTable(false);setChair(false);setAll(false)}} className={`text-xl transition-all cursor-pointer ${banq?'text-white bg-[#11334f]': 'text-[#11334f] bg-[#eee]'} px-4 rounded-lg border border-[#11334f]`} >Banquettes</p>
+          <div  className='flex md:flex-row flex-col sm:w-auto w-fit gap-4 items-center'>
+            {categories.map((type,index)=>(<p onClick={()=>setCategory(type)} key={index} className={`text-xl transition-all cursor-pointer ${category===type&&'text-white bg-[#11334f]'} px-4 transition-all border border-[#11334f]`}>{type}</p>))}
           </div>
         </div>
-        {all && (
+        {
+        category==='Tout' && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
           {currentProducts.map((product)=>(
             <ProductCard id={product.id} key={product.id} name={product.name} price={product.price}
             image={product.images[0].image}/>
             ))}
-            <Pagination totalProducts={products.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/>
-        </div>) }
-        {chair && (
+        </div>) 
+        }
+
+        {category ==='Tout' && <Pagination totalProducts={products.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
+        {category ==="Chaises" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
           {chairs.map((chair)=>(
             <ProductCard id={chair.id} key={chair.id} name={chair.name} price={chair.price}
             image={chair.images[0].image}/>
           ))}
         </div>)}
-        {table && (
+        {category ==="Tables" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
           {tables.map((table)=>(
             <ProductCard id={table.id} key={table.id} name={table.name} price={table.price}
             image={table.images[0].image}/>
           ))}
         </div>)}
-        {meuble && (
+        {category ==="Meubles" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
           {meubles.map((meuble)=>(
             <ProductCard id={meuble.id} key={meuble.id} name={meuble.name} price={meuble.price}
             image={meuble.images[0].image}/>
           ))}
         </div>)}
-        {banq && (
+        {category ==="Banquettes" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
           {banquettes.map((banq)=>(
             <ProductCard id={banq.id} key={banq.id} name={banq.name} price={banq.price}

@@ -11,10 +11,11 @@ const Checkout = () => {
   return (
     <div>
         <Header/>
+        <h1 className='pt-[12rem] py-14 px-16 sm:text-5xl text-xl text-[#11334f]  '>Envoyer Votre Commande</h1>
            {sucessOrder && <div className='z-30 fixed top-[10%] left-[50%] translate-x-[-50%] rounded-xl sm:text-2xl text-lg w-fit py-2 px-4 bg-green-500 text-white'>
              <h3>Your Order has been sent successfully</h3>
            </div>}
-           <div className='py-[12rem] px-16 flex sm:flex-row md:gap-10'>
+           <div className='pb-[12rem] px-16 flex sm:flex-row md:gap-10'>
              <CheckoutContact successOrder={sucessOrder} setSuccessOrder={setSuccessOrder}/>
              <div className='w-[40%] md:block hidden'>
               <h1 className='text-2xl pb-4 text-[#11334f]'>My Cart ({itemAmount})</h1>

@@ -7,7 +7,7 @@ const Pagination = ({totalProducts,productPerPage,setCurrrentPage,currentPage}) 
   return (
     <div className='flex flex-row items-center justify-center gap-6'>
         {pages.map((page,index)=>(
-            <button className={`${currentPage===page && 'text-white bg-[#11334f]'} py-2 px-4 hover:text-white hover:bg-[#11334f] transition-all text-[#11334f] border border-[#11334f]`} key={index} onClick={()=>setCurrrentPage(page)}>{page}</button>
+            <a href='#products' className={`${currentPage===page && 'text-white bg-[#11334f]'} py-2 px-4 hover:text-white hover:bg-[#11334f] transition-all text-[#11334f] border border-[#11334f]`} key={index} onClick={()=>setCurrrentPage(page)}>{page}</a>
         ))}
     </div>
   )

@@ -16,34 +16,33 @@ const CheckoutContact = ({sucessOrder,setSuccessOrder}) => {
           console.log(error.text);
       });
   };
-
   return (
 
 
     <form ref={form} onSubmit={sendEmail} className='flex flex-col gap-6 md:w-[70%] w-full'>
       <div className='flex flex-col gap-6 md:w-[80%] w-full'>
       <div className='flex flex-col gap-4'>
-        <label className='text-[#11334f] text-xl font-medium'>Name</label>
-        <input required name='client_name' type="text" className='py-2 px-4 rounded-lg text-xl placeholder-gray-400 border focus:border-[2px] border-[#11334f]' placeholder='Your Name here' />
+        <label className='text-[#11334f] text-xl font-medium'>Nom</label>
+        <input required name='client_name' type="text" className='py-2 px-4 text-xl placeholder-gray-400 border focus:border-[2px] border-[#11334f]' placeholder='Entrez Votre Nom' />
       </div>
       <div className='flex flex-col gap-4'>
-        <label className='text-[#11334f] text-xl font-medium'>Email</label>
-        <input required name='client_email' type="email" className='py-2 px-4 rounded-lg text-xl placeholder-gray-400 border focus:border-[2px] border-[#11334f]' placeholder='Your Email here' />
+        <label className='text-[#11334f] text-xl font-medium'>E-mail</label>
+        <input required name='client_email' type="email" className='py-2 px-4 text-xl placeholder-gray-400 border focus:border-[2px] border-[#11334f]' placeholder='Entrez votre E-mail' />
       </div>
       <div className='flex flex-col gap-4'>
-        <label className='text-[#11334f] text-xl font-medium'>Phone Number</label>
-        <input required name='client_phone' type="number" className='py-2 px-4 rounded-lg text-xl placeholder-gray-400 border focus:border-[2px] border-[#11334f]' placeholder='Phone Number here' />
+        <label className='text-[#11334f] text-xl font-medium'>Numéro de Téléphone</label>
+        <input required name='client_phone' type="number" className='py-2 px-4 text-xl placeholder-gray-400 border focus:border-[2px] border-[#11334f]' placeholder='Entrez votre Numéro' />
       </div>
       <div className='flex flex-col gap-4'>
-        <label className='text-[#11334f] text-xl font-medium'>Your Address</label>
-        <textarea required name='client_adresse' rows={8} type="text" className='py-2 px-4 rounded-lg text-xl placeholder-gray-400 border focus:border-[2px] border-[#11334f]' placeholder='Your Address' />
+        <label className='text-[#11334f] text-xl font-medium'>Adresse</label>
+        <textarea required name='client_adresse' rows={8} type="text" className='py-2 px-4 text-xl placeholder-gray-400 border focus:border-[2px] border-[#11334f]' placeholder='Entrez votre Adresse' />
       </div>
       <div className='flex flex-col gap-4'>
-        <input defaultValue={cartItems} type='text' name='cart' className='hidden py-2 px-4 rounded-lg text-xl placeholder-gray-400 border focus:border-[2px] border-[#11334f]' placeholder='Your Phone Number' />
-        <input defaultValue={total} name='total_price' type='number' className='hidden py-2 px-4 rounded-lg text-xl placeholder-gray-400 border focus:border-[2px] border-[#11334f]' placeholder='Your Phone Number' />
+        <input defaultValue={cartItems} type='text' name='cart' className='hidden'/>
+        <input defaultValue={total} name='total_price' type='number' className='hidden'/>
       </div>
       </div>
-      <button onClick={()=>{sendEmail;setSuccessOrder(true);setTimeout(setSuccessOrder(false),3000)}} className='text-center py-2 px-4 bg-[#11334f] text-xl rounded-lg hover:opacity-80 transition-all text-white w-fit'>Send Order</button>
+      <button onClick={sendEmail} className='text-center py-2 px-4 bg-[#11334f] text-xl hover:opacity-80 transition-all text-white w-fit'>Commander</button>
     </form>
   )
 }
