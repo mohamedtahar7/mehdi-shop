@@ -30,9 +30,6 @@ const Header = () => {
          <div>
             <ul className='flex items-center gap-12'>
                 <li className={`text-2xl ${!activeNav?'text-[#11334f]':'text-[#fff]'} transition font-normal `}><Link to='/'>Accueil</Link></li>
-                <li className={`text-2xl ${!activeNav?'text-[#11334f]':'text-[#fff]'} transition font-normal `}><Link to='/#about'>A Propos</Link></li>
-                <li className={`text-2xl ${!activeNav?'text-[#11334f]':'text-[#fff]'} transition font-normal `}><a href='#products'>Produits</a></li>
-                <li className={`text-2xl ${!activeNav?'text-[#11334f]':'text-[#fff]'} transition font-normal `}><Link to='/#contact'>Contact</Link></li>
                 <li onClick={()=>{setActiveCart(true)}}>
                   <a className='relative group cursor-pointer'>
                     <BsCart className={`${!activeNav?'text-[#11334f]' : 'text-white'} transition`} size={30}/>
@@ -70,9 +67,6 @@ const Header = () => {
         <div className={`absolute ${mobileNav?'top-28':'-top-96'} right-7 transition-all duration-300 bg-[#11334f] py-8 px-6`}>
             <ul className='flex flex-col gap-8 items-center'>
                 <li className={`text-2xl transition font-medium text-[#fff]`} ><Link className='cursor-pointer' to={'/'}>Accueil</Link></li>
-                <li className={`text-2xl transition font-medium text-[#fff]`} ><a className='cursor-pointer' href='#about'>A Propos</a></li>
-                <li className={`text-2xl transition font-medium text-[#fff]`} ><Link className='cursor-pointer' href='#products'>Produits</Link></li>
-                <li className={`text-2xl transition font-medium text-[#fff]`} ><a className='cursor-pointer' href='#contact'>Contact</a></li>
             </ul>
         </div>
     </nav>

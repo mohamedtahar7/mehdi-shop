@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { CartContext } from '../contexts/CartContext'
 import {AiOutlinePlus,AiOutlineEye} from 'react-icons/ai'
 const ProductCard = ({image,price,name,id}) => {
-  const {addToCart} = useContext(CartContext)
+  const {addToCart,cart} = useContext(CartContext)
   const product = {image,price,name,id}
   return (
     <div className='relative group w-fit overflow-y-hidden'>

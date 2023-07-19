@@ -21,7 +21,7 @@ const Products = () => {
         <div className='flex sm:flex-row flex-col justify-center gap-4 mt-6 items-center'>
           <h3 className='text-2xl text-[#11334f]'>Filter : </h3>
           <div  className='flex md:flex-row flex-col sm:w-auto w-fit gap-4 items-center'>
-            {categories.map((type,index)=>(<p onClick={()=>setCategory(type)} key={index} className={`text-xl transition-all cursor-pointer ${category===type&&'text-white bg-[#11334f]'} px-4 transition-all border border-[#11334f]`}>{type}</p>))}
+            {categories.map((type,index)=>(<p onClick={()=>setCategory(type)} key={index} className={`text-xl hover:text-white hover:bg-[#11334f] transition-all cursor-pointer ${category===type&&'text-white bg-[#11334f]'} px-4 transition-all border border-[#11334f]`}>{type}</p>))}
           </div>
         </div>
         {

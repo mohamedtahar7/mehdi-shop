@@ -4,13 +4,14 @@ import { CartContext } from '../contexts/CartContext'
 import {AiOutlinePlus} from 'react-icons/ai'
 import {HiMinus} from 'react-icons/hi'
 import {CgClose} from 'react-icons/cg'
+import { products } from '../utils/products'
 const CartItem = ({item}) => {
     const {itemAmount,removeFromCart,increaseAmount,decreaseAmount} = useContext(CartContext)
     return (
       <div className='py-8 mb-4 px-6 border-y-2 border-[#e1e1e1]'>
           <div className='flex items-center'>
              <div>
-              <img className='w-[90%] rounded-lg' src={item.image} alt="image" />
+              <img className='w-[90%] rounded-lg' src={item.image || item.images[0].image} alt="image" />
              </div>
              <div className='w-[224rem]'>
              <div className='flex items-center justify-between'>
