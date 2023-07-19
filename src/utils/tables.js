@@ -1,7 +1,7 @@
 export const tables =  [
     {
         name:'Cozy Table',
-        price:'11000.00',
+        price:'17500.00',
         id:'cozy-table',
         images:[
            {image:'/src/assets/tables/product-1.jpg',},
@@ -10,7 +10,7 @@ export const tables =  [
     },
     {
         name:'Dream Table',
-        price:'12500.00',
+        price:'17500.00',
         id:'dream-table',
         images:[
             {image:'/src/assets/tables/product-2.jpg'},

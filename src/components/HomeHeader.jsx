@@ -29,8 +29,8 @@ const HomeHeader = () => {
         <div className='lg:block hidden'>
          <div>
             <ul className='flex items-center gap-12'>
-                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><Link to='/'>Accueil</Link></li>
-                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><Link to='/#about'>A Propos</Link></li>
+                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><a href='#'>Accueil</a></li>
+                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><a href='#about'>A Propos</a></li>
                 <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><a href='#products'>Produits</a></li>
                 <li onClick={()=>{setActiveCart(true)}}>
                   <a className='relative group cursor-pointer'>

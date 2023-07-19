@@ -1,7 +1,7 @@
 export const banquettes = [
     {
         name:'CozySeat',
-        price:'16000.00',
+        price:'17500.00',
         id:'cozyseat',
         images:[
            {image:'/src/assets/banquettes/product-1.jpg',},
@@ -16,5 +16,5 @@ export const banquettes = [
            {image:'/src/assets/banquettes/product-2.jpg',},
            {image:'/src/assets/banquettes/product-2-1.jpg'}
         ],
-    }
+    },
 ]
