@@ -12,6 +12,7 @@ const CheckoutContact = ({sucessOrder,setSuccessOrder}) => {
     e.preventDefault();
     emailjs.sendForm('service_alw2bdj', 'template_22vqklb', form.current, 'wBPtSopVRqmmnpaTC')
       .then((result) => {
+        alert('Votre Commande a été envoyé')
       }, (error) => {
           console.log(error.text);
       });
