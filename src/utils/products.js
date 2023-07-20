@@ -14,7 +14,7 @@ export const products = [
             price:'14500.00',
             id:'pachonita-chair',
             images:[
-                {image:'/src/assets/chairs/product-2.jpg'},
+                {image:'https://i.postimg.cc/hPM9ZyTM/product-2.jpg'},
                 {image:'/src/assets/chairs/product-2-1.jpg'},
             ],
         },

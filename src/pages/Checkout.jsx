@@ -18,7 +18,7 @@ const Checkout = () => {
            <div className='pb-[12rem] px-16 flex sm:flex-row md:gap-10'>
              <CheckoutContact successOrder={sucessOrder} setSuccessOrder={setSuccessOrder}/>
              <div className='w-[40%] md:block hidden'>
-              <h1 className='text-2xl pb-4 text-[#11334f]'>My Cart ({itemAmount})</h1>
+              <h1 className='text-2xl pb-4 text-[#11334f]'>Mon Panier ({itemAmount})</h1>
               {cart.map((item,index)=>(
                 <CartItem item={item} key={index}/>
               ))}
