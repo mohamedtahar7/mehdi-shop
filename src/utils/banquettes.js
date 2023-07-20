@@ -4,8 +4,8 @@ export const banquettes = [
         price:'17500.00',
         id:'cozyseat',
         images:[
-           {image:'/src/assets/banquettes/product-1.jpg',},
-           {image:'/src/assets/banquettes/product-1-1.jpg'}
+           {image:'https://i.postimg.cc/W1ds4qdG/product-1.jpg',},
+           {image:'https://i.postimg.cc/1z6PGxc4/product-1-1.jpg'}
         ],
     },
     {
@@ -13,8 +13,8 @@ export const banquettes = [
         price:'17500.00',
         id:'relaxlounge',
         images:[
-           {image:'/src/assets/banquettes/product-2.jpg',},
-           {image:'/src/assets/banquettes/product-2-1.jpg'}
+           {image:'https://i.postimg.cc/y82s36Rw/product-2.jpg',},
+           {image:'https://i.postimg.cc/26DYTH2G/product-2-1.jpg'}
         ],
     },
 ]
