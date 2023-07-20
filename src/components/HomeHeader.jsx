@@ -24,7 +24,7 @@ const HomeHeader = () => {
     <div>
     <nav className={`py-4 z-10 ${activeNav?'bg-[#11334f]' : 'bg-none'} transition-all sm:px-16 px-6 fixed w-full flex justify-between items-center`}>
         <Link to="/">
-            {activeNav?<img className='sm:w-48 w-40' src={'/src/assets/LOGO VIDE 2.png'} alt="logo" />:<img className='sm:w-48 w-40' src={logoB} alt="logo" />}
+            {activeNav?<img className='sm:w-48 w-40' src={logoW} alt="logo" />:<img className='sm:w-48 w-40' src={logoB} alt="logo" />}
         </Link>
         <div className='lg:block hidden'>
          <div>
