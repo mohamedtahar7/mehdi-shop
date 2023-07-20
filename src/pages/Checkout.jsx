@@ -19,10 +19,10 @@ const Checkout = () => {
              <CheckoutContact successOrder={sucessOrder} setSuccessOrder={setSuccessOrder}/>
              <div className='w-[40%] md:block hidden'>
               <h1 className='text-2xl pb-4 text-[#11334f]'>Mon Panier ({itemAmount})</h1>
+              <h1 className='text-2xl pb-4 text-[#11334f]'>Total : {total}.00 DA</h1>
               {cart.map((item,index)=>(
                 <CartItem item={item} key={index}/>
               ))}
-              <h1 className='text-2xl text-[#11334f]'>Total : {total}.00 DA</h1>
              </div>
            </div>
         <Footer/>

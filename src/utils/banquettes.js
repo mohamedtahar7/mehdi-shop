@@ -1,20 +1,2 @@
-export const banquettes = [
-    {
-        name:'CozySeat',
-        price:'17500.00',
-        id:'cozyseat',
-        images:[
-           {image:'https://i.postimg.cc/W1ds4qdG/product-1.jpg',},
-           {image:'https://i.postimg.cc/1z6PGxc4/product-1-1.jpg'}
-        ],
-    },
-    {
-        name:'Relaxlounge',
-        price:'17500.00',
-        id:'relaxlounge',
-        images:[
-           {image:'https://i.postimg.cc/y82s36Rw/product-2.jpg',},
-           {image:'https://i.postimg.cc/26DYTH2G/product-2-1.jpg'}
-        ],
-    },
-]
+import { products } from "./products"
+export const banquettes = products.filter((item)=>item.category==='Banquettes');

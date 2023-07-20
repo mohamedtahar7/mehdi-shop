@@ -11,7 +11,7 @@ const CheckoutContact = ({sucessOrder,setSuccessOrder}) => {
       icon: 'success',
       title: 'Votre Commande a été envoyer',
       showConfirmButton: false,
-      timer: 2000
+      timer: 3000
     })
     
   }
@@ -24,7 +24,7 @@ const CheckoutContact = ({sucessOrder,setSuccessOrder}) => {
     e.preventDefault();
     emailjs.sendForm('service_alw2bdj', 'template_22vqklb', form.current, 'wBPtSopVRqmmnpaTC')
       .then((result) => {
-        alert('Votre Commande a été envoyer')
+        alert()
       }, (error) => {
           console.log(error.text);
       });

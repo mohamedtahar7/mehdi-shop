@@ -36,7 +36,7 @@ const Products = () => {
         {category ==='Tout' && <Pagination totalProducts={products.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
         {category ==="Chaises" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
-          {chairs.map((chair)=>(
+          {products.filter((item)=>item.category===category).map((chair)=>(
             <ProductCard id={chair.id} key={chair.id} name={chair.name} price={chair.price}
             image={chair.images[0].image}/>
           ))}
@@ -44,7 +44,7 @@ const Products = () => {
         {category ==='Chaises' && <Pagination totalProducts={chairs.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
         {category ==="Tables" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
-          {tables.map((table)=>(
+          {products.filter(item=>item.category===category).map((table)=>(
             <ProductCard id={table.id} key={table.id} name={table.name} price={table.price}
             image={table.images[0].image}/>
           ))}
@@ -52,7 +52,7 @@ const Products = () => {
         {category ==='Tables' && <Pagination totalProducts={tables.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
         {category ==="Meubles" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
-          {meubles.map((meuble)=>(
+          {products.filter(item=>item.category===category).map((meuble)=>(
             <ProductCard id={meuble.id} key={meuble.id} name={meuble.name} price={meuble.price}
             image={meuble.images[0].image}/>
           ))}
@@ -60,7 +60,7 @@ const Products = () => {
         {category ==='Meubles' && <Pagination totalProducts={meubles.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
         {category ==="Banquettes" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
-          {banquettes.map((banq)=>(
+          {products.filter(item=>item.category===category).map((banq)=>(
             <ProductCard id={banq.id} key={banq.id} name={banq.name} price={banq.price}
             image={banq.images[0].image}/>
           ))}
