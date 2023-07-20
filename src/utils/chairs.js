@@ -26,4 +26,5 @@ export const chairs =  [
             {image:'https://i.postimg.cc/v8vP4P9y/product-3-1.jpg'},
         ],
     },
+    
 ]

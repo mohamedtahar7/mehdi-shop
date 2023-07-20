@@ -9,11 +9,11 @@ const CartItem = ({item}) => {
     const {itemAmount,removeFromCart,increaseAmount,decreaseAmount} = useContext(CartContext)
     return (
       <div className='py-8 mb-4 px-6 border-y-2 border-[#e1e1e1]'>
-          <div className='flex items-center'>
+          <div className='flex items-center gap-8'>
              <div>
-              <img className='w-[90%] rounded-lg' src={item.image || item.images[0].image} alt="image" />
+              <img className='w-[100%] rounded-lg' src={item.image || item.images[0].image} alt="image" />
              </div>
-             <div className='w-[224rem]'>
+             <div className='w-[96rem]'>
              <div className='flex items-center justify-between'>
                <h4 className='text-xl text-[#11334f] font-medium '>{item.name}</h4>
                <CgClose onClick={()=>{removeFromCart(item.id)}} size={25} className='text-[#11334f] cursor-pointer'/>

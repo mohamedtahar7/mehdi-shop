@@ -33,7 +33,6 @@ const Products = () => {
             ))}
         </div>) 
         }
-
         {category ==='Tout' && <Pagination totalProducts={products.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
         {category ==="Chaises" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
@@ -42,6 +41,7 @@ const Products = () => {
             image={chair.images[0].image}/>
           ))}
         </div>)}
+        {category ==='Chaises' && <Pagination totalProducts={chairs.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
         {category ==="Tables" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
           {tables.map((table)=>(
@@ -49,6 +49,7 @@ const Products = () => {
             image={table.images[0].image}/>
           ))}
         </div>)}
+        {category ==='Tables' && <Pagination totalProducts={tables.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
         {category ==="Meubles" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
           {meubles.map((meuble)=>(
@@ -56,6 +57,7 @@ const Products = () => {
             image={meuble.images[0].image}/>
           ))}
         </div>)}
+        {category ==='Meubles' && <Pagination totalProducts={meubles.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
         {category ==="Banquettes" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
           {banquettes.map((banq)=>(
@@ -63,6 +65,7 @@ const Products = () => {
             image={banq.images[0].image}/>
           ))}
         </div>)}
+        {category ==='Banquettes' && <Pagination totalProducts={banquettes.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
         {/* <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
           {chairs.map((chair)=>(
             <ProductCard id={chair.id} key={chair.id} name={chair.name} price={chair.price}

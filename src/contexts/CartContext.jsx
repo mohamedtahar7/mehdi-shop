@@ -5,15 +5,15 @@ const CartProvider = ({ children }) => {
   const [itemAmount, setItemAmount] = useState(0);
   // total price state
   const [total, setTotal] = useState(0);
-  useEffect(()=>{
-    const data = localStorage.getItem('my-cart')
-    if(data) {
-      setCart(JSON.parse(data))
-    }
-  },[])
-  useEffect(()=>{
-    localStorage.setItem('my-cart',JSON.stringify(cart))
-  },[cart]);
+  // useEffect(()=>{
+  //   const data = localStorage.getItem('my-cart')
+  //   if(data) {
+  //     setCart(JSON.parse(data))
+  //   }
+  // },[])
+  // useEffect(()=>{
+  //   localStorage.setItem('my-cart',JSON.stringify(cart))
+  // },[cart]);
 
   // update Total
   useEffect(() => {

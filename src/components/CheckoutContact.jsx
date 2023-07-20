@@ -1,8 +1,20 @@
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { useContext } from 'react';
+import Swal from 'sweetalert2';
 import { CartContext } from '../contexts/CartContext';
 const CheckoutContact = ({sucessOrder,setSuccessOrder}) => {
+
+  const alert = ()=>{
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Votre Commande a été envoyer',
+      showConfirmButton: false,
+      timer: 2000
+    })
+    
+  }
   const {cart,total} = useContext(CartContext)
   const cartItems = `\n${cart.map((item,index)=>`
   Produit ${index+1} : ${item.name} , Price : ${item.price} DA , Quantity : ${item.amount} |
@@ -12,7 +24,7 @@ const CheckoutContact = ({sucessOrder,setSuccessOrder}) => {
     e.preventDefault();
     emailjs.sendForm('service_alw2bdj', 'template_22vqklb', form.current, 'wBPtSopVRqmmnpaTC')
       .then((result) => {
-        alert('Votre Commande a été envoyé')
+        alert('Votre Commande a été envoyer')
       }, (error) => {
           console.log(error.text);
       });
@@ -20,7 +32,7 @@ const CheckoutContact = ({sucessOrder,setSuccessOrder}) => {
   return (
 
 
-    <form ref={form} onSubmit={sendEmail} className='flex flex-col gap-6 md:w-[70%] w-full'>
+    <form id='checkoutForm' ref={form} onSubmit={sendEmail} className='flex flex-col gap-6 md:w-[70%] w-full'>
       <div className='flex flex-col gap-6 md:w-[80%] w-full'>
       <div className='flex flex-col gap-4'>
         <label className='text-[#11334f] text-xl font-medium'>Nom</label>
@@ -36,7 +48,7 @@ const CheckoutContact = ({sucessOrder,setSuccessOrder}) => {
       </div>
       <div className='flex flex-col gap-4'>
         <label className='text-[#11334f] text-xl font-medium'>Adresse</label>
-        <textarea required name='client_adresse' rows={8} type="text" className='py-2 px-4 text-xl placeholder-gray-400 border focus:border-[2px] border-[#11334f]' placeholder='Entrez votre Adresse' />
+        <textarea required name='client_adresse' rows={4} type="text" className='py-2 px-4 text-xl placeholder-gray-400 border focus:border-[2px] border-[#11334f]' placeholder='Entrez votre Adresse' />
       </div>
       <div className='flex flex-col gap-4'>
         <input defaultValue={cartItems} type='text' name='cart' className='hidden'/>
