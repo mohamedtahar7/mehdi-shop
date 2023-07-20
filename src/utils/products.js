@@ -5,8 +5,8 @@ export const products = [
             price:'14500.00',
             id:'regazo-chair',
             images:[
-               {image:'/src/assets/chairs/product-1.jpg',},
-               {image:'/src/assets/chairs/product-1-1.jpg'}
+               {image:'/assets/chairs/product-1.jpg',},
+               {image:'/assets/chairs/product-1-1.jpg'}
             ],
         },
         {
@@ -14,8 +14,8 @@ export const products = [
             price:'14500.00',
             id:'pachonita-chair',
             images:[
-                {image:'/src/assets/chairs/product-2.jpg'},
-                {image:'/src/assets/chairs/product-2-1.jpg'},
+                {image:'/assets/chairs/product-2.jpg'},
+                {image:'/assets/chairs/product-2-1.jpg'},
             ],
         },
         {
@@ -23,8 +23,8 @@ export const products = [
             price:'14500.00',
             id:'reclinable-chair',
             images:[
-                {image:'/src/assets/chairs/product-3.jpg'},
-                {image:'/src/assets/chairs/product-3-1.jpg'},
+                {image:'/assets/chairs/product-3.jpg'},
+                {image:'/assets/chairs/product-3-1.jpg'},
             ],
         },
     // Tables
@@ -33,8 +33,8 @@ export const products = [
             price:'17500.00',
             id:'cozy-table',
             images:[
-               {image:'/src/assets/tables/product-1.jpg',},
-               {image:'/src/assets/tables/product-1-1.jpg'}
+               {image:'/assets/tables/product-1.jpg',},
+               {image:'/assets/tables/product-1-1.jpg'}
             ],
         },
         {
@@ -42,8 +42,8 @@ export const products = [
             price:'17500.00',
             id:'dream-table',
             images:[
-                {image:'/src/assets/tables/product-2.jpg'},
-                {image:'/src/assets/tables/product-2-1.jpg'},
+                {image:'/assets/tables/product-2.jpg'},
+                {image:'/assets/tables/product-2-1.jpg'},
             ],
         },
         // Meubles
@@ -52,8 +52,8 @@ export const products = [
             price:'39500.00',
             id:'meuble-1',
             images:[
-               {image:'/src/assets/meubles/product-1.jpg',},
-               {image:'/src/assets/meubles/product-1-1.jpg'}
+               {image:'/assets/meubles/product-1.jpg',},
+               {image:'/assets/meubles/product-1-1.jpg'}
             ],
         },
         {
@@ -61,8 +61,8 @@ export const products = [
             price:'36500.00',
             id:'meuble-2',
             images:[
-               {image:'/src/assets/meubles/product-2.jpg',},
-               {image:'/src/assets/meubles/product-2-1.jpg'}
+               {image:'/assets/meubles/product-2.jpg',},
+               {image:'/assets/meubles/product-2-1.jpg'}
             ],
         },
         // Banquettes
@@ -71,8 +71,8 @@ export const products = [
             price:'17500.00',
             id:'cozyseat',
             images:[
-               {image:'/src/assets/banquettes/product-1.jpg',},
-               {image:'/src/assets/banquettes/product-1-1.jpg'}
+               {image:'/assets/banquettes/product-1.jpg',},
+               {image:'/assets/banquettes/product-1-1.jpg'}
             ],
         },
         {
@@ -80,8 +80,8 @@ export const products = [
             price:'17500.00',
             id:'relaxlounge',
             images:[
-               {image:'/src/assets/banquettes/product-2.jpg',},
-               {image:'/src/assets/banquettes/product-2-1.jpg'}
+               {image:'/assets/banquettes/product-2.jpg',},
+               {image:'/assets/banquettes/product-2-1.jpg'}
             ],
         },
 ]
