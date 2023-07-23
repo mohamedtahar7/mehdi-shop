@@ -30,8 +30,8 @@ const HomeHeader = () => {
          <div>
             <ul className='flex items-center gap-12'>
                 <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><a href='#'>Accueil</a></li>
-                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><Link to='/about'>A Propos</Link></li>
-                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><a href='#products'>Produits</a></li>
+                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><a href='#about'>A Propos</a></li>
+                <li className={`text-2xl ${!activeNav?'hover:text-[#11334f]':''} transition font-normal text-[#fff] `}><Link to='/products'>Produits</Link></li>
                 <li onClick={()=>{setActiveCart(true)}}>
                   <a className='relative group cursor-pointer'>
                     <BsCart className={`text-[#fff] ${!activeNav?'group-hover:text-[#11334f]' : ''} transition`} size={30}/>
@@ -72,8 +72,8 @@ const HomeHeader = () => {
         <div className={`absolute ${mobileNav?'top-28':'-top-96'} right-7 transition-all duration-300 bg-[#11334f] py-8 px-6`}>
             <ul className='flex flex-col gap-8 items-center'>
                 <li onClick={()=>setMobileNav(false)} className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#'>Accueil</a></li>
-                <li onClick={()=>setMobileNav(false)} className='text-2xl transition font-medium text-[#fff] '><Link className='cursor-pointer' to='/about'>A Propos</Link></li>
-                <li onClick={()=>setMobileNav(false)} className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#products'>Produits</a></li>
+                <li onClick={()=>setMobileNav(false)} className='text-2xl transition font-medium text-[#fff] '><a className='cursor-pointer' href='#about'>A Propos</a></li>
+                <li onClick={()=>setMobileNav(false)} className='text-2xl transition font-medium text-[#fff] '><Link className='cursor-pointer' to='/products'>Produits</Link></li>
             </ul>
         </div>
     </nav>

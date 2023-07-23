@@ -8,6 +8,7 @@ import CartItem from '../components/CartItem'
 const Checkout = () => {
     const [sucessOrder,setSuccessOrder] = useState(false)
     const {cart,itemAmount,total} = useContext(CartContext)
+    const cartLength = cart.length;
   return (
     <div>
         <Header/>

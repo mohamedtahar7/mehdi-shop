@@ -8,6 +8,7 @@ import { products } from '../utils/products'
 import { meubles } from '../utils/meubles'
 import {banquettes} from '../utils/banquettes' 
 import { categories } from '../utils/categories'
+import Header from './Header'
 const Products = () => {
   const [category,setCategory] = useState('Tout')
   const [currentPage,setCurrentPage] = useState(1)
@@ -16,7 +17,9 @@ const Products = () => {
   const firstProductIndex = lastProductIndex - productPerPage;
   const currentProducts = products.slice(firstProductIndex,lastProductIndex)
   return (
-    <section id='products' className='h-auto py-16 px-20'>
+    <section>
+        <Header/>
+        <div  className='h-auto py-40 px-20'>
         <h1 data-aos="fade-left" className='sm:text-5xl text-3xl text-[#11334f] text-center'>Nos Produits</h1>
         <div className='flex sm:flex-row flex-col justify-center gap-4 mt-6 items-center'>
           <h3 className='text-2xl text-[#11334f]'>Filter : </h3>
@@ -72,6 +75,7 @@ const Products = () => {
             image={chair.images[0].image}/>
           ))}
         </div> */}
+        </div>
     </section>
     
   )

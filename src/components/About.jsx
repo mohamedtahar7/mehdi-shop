@@ -2,8 +2,7 @@ import React from 'react'
 import Header from './Header'
 const About = () => {
   return (
-    <section>
-      <Header/>
+    <section id='about'>
       <div className='py-36 px-20'>
         <h1 className='text-[#11334f] sm:text-5xl text-center text-3xl'>A Propos de UniConfort</h1>
         <div className='py-24 flex items-center justify-center gap-16 md:flex-row flex-col'>
