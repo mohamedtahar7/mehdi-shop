@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { CartContext } from '../contexts/CartContext'
 import {AiOutlinePlus,AiOutlineEye} from 'react-icons/ai'
-const ProductCard = ({image,price,name,id}) => {
+import { motion } from 'framer-motion'
+const ProductCard = ({image,price,name,id,duration}) => {
   const {addToCart,cart} = useContext(CartContext)
   const product = {image,price,name,id}
   return (
-    <div className='relative group w-fit overflow-y-hidden'>
+    <motion.div whileInView={{y:0,opacity:1}} initial={{y:-100,opacity:0}} transition={{type:'tween',duration:1}} className='relative group w-fit overflow-y-hidden'>
         <div className='group-hover:opacity-80 group-hover:cursor-pointer'>
           <img className='w-[90%] h-[90%] rounded-xl' src={image} alt="image" />
           <div className='text-center py-6'>
@@ -21,7 +22,7 @@ const ProductCard = ({image,price,name,id}) => {
              <AiOutlineEye className='p-3 bg-white text-[#11334f] cursor-pointer' size={50}/>
             </Link>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

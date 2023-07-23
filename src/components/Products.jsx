@@ -9,6 +9,7 @@ import { meubles } from '../utils/meubles'
 import {banquettes} from '../utils/banquettes' 
 import { categories } from '../utils/categories'
 import Header from './Header'
+import { motion } from 'framer-motion'
 const Products = () => {
   const [category,setCategory] = useState('Tout')
   const [currentPage,setCurrentPage] = useState(1)
@@ -20,17 +21,17 @@ const Products = () => {
     <section>
         <Header/>
         <div  className='h-auto py-40 px-20'>
-        <h1 data-aos="fade-left" className='sm:text-5xl text-3xl text-[#11334f] text-center'>Nos Produits</h1>
-        <div className='flex sm:flex-row flex-col justify-center gap-4 mt-6 items-center'>
+        <motion.h1 whileInView={{x:0}} initial={{x:-200}} transition={{type:'tween',duration:0.8}} className='sm:text-5xl text-3xl text-[#11334f] text-center'>Nos Produits</motion.h1>
+        <motion.div whileInView={{x:0}} initial={{x:200}} transition={{type:'tween',duration:0.8}} className='flex sm:flex-row flex-col justify-center gap-4 mt-6 items-center'>
           <h3 className='text-2xl text-[#11334f]'>Filter : </h3>
           <div  className='flex md:flex-row flex-col sm:w-auto w-fit gap-4 items-center'>
             {categories.map((type,index)=>(<p onClick={()=>setCategory(type)} key={index} className={`text-xl hover:text-white hover:bg-[#11334f] transition-all cursor-pointer ${category===type&&'text-white bg-[#11334f]'} px-4 transition-all border border-[#11334f]`}>{type}</p>))}
           </div>
-        </div>
+        </motion.div>
         {
         category==='Tout' && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
-          {currentProducts.map((product)=>(
+          {currentProducts.map((product,index)=>(
             <ProductCard id={product.id} key={product.id} name={product.name} price={product.price}
             image={product.images[0].image}/>
             ))}
