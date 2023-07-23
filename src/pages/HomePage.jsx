@@ -2,15 +2,15 @@ import React from 'react'
 import Home from '../components/Home'
 import HomeHeader from '../components/HomeHeader'
 import Footer from "../components/Footer"
-import Benefits from '../components/Benefits'
 import About from '../components/About'
+import Feature from '../components/Feature'
 const HomePage = () => {
   return (
     <div>
         <HomeHeader/>
         <Home/>
         <About/>
-        <Benefits/>
+        <Feature/>
         <Footer/>
     </div>
   )

@@ -39,7 +39,10 @@ const Products = () => {
         {category ==='Tout' && <Pagination totalProducts={products.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
         {category ==="Chaises" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
-          {currentProducts.filter((item)=>item.category===category).map((chair)=>(
+          {currentProducts.filter(item=>item.category===category).length>=productPerPage ?currentProducts.filter(item=>item.category===category).map((chair)=>(
+            <ProductCard id={chair.id} key={chair.id} name={chair.name} price={chair.price}
+            image={chair.images[0].image}/>
+          )) : products.filter(item=>item.category===category).map((chair)=>(
             <ProductCard id={chair.id} key={chair.id} name={chair.name} price={chair.price}
             image={chair.images[0].image}/>
           ))}
@@ -47,7 +50,7 @@ const Products = () => {
         {category ==='Chaises' && <Pagination totalProducts={chairs.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
         {category ==="Tables" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
-          {currentProducts.filter(item=>item.category===category).length>=6 ?currentProducts.filter(item=>item.category===category).map((table)=>(
+          {currentProducts.filter(item=>item.category===category).length>=productPerPage ?currentProducts.filter(item=>item.category===category).map((table)=>(
             <ProductCard id={table.id} key={table.id} name={table.name} price={table.price}
             image={table.images[0].image}/>
           )) : products.filter(item=>item.category===category).map((table)=>(
@@ -58,7 +61,7 @@ const Products = () => {
         {category ==='Tables' && <Pagination totalProducts={tables.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
         {category ==="Meubles" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
-          {currentProducts.filter(item=>item.category===category).length>=6 ?currentProducts.filter(item=>item.category===category).map((table)=>(
+          {currentProducts.filter(item=>item.category===category).length>=productPerPage ?currentProducts.filter(item=>item.category===category).map((table)=>(
             <ProductCard id={table.id} key={table.id} name={table.name} price={table.price}
             image={table.images[0].image}/>
           )) : products.filter(item=>item.category===category).map((table)=>(
@@ -69,7 +72,7 @@ const Products = () => {
         {category ==='Meubles' && <Pagination totalProducts={meubles.length} productPerPage={productPerPage} setCurrrentPage={setCurrentPage} currentPage={currentPage}/> }
         {category ==="Banquettes" && (
         <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
-          {currentProducts.filter(item=>item.category===category).length>=6 ?currentProducts.filter(item=>item.category===category).map((table)=>(
+          {currentProducts.filter(item=>item.category===category).length>=productPerPage ?currentProducts.filter(item=>item.category===category).map((table)=>(
             <ProductCard id={table.id} key={table.id} name={table.name} price={table.price}
             image={table.images[0].image}/>
           )) : products.filter(item=>item.category===category).map((table)=>(

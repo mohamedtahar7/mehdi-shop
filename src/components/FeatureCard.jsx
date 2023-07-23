@@ -1,5 +1,5 @@
 import React from 'react'
-const BenefitCard = ({name,description,icon}) => {
+const FeatureCard = ({name,description,icon}) => {
   return (
     <div className='w-[80%]'>
         <div className='flex items-center gap-4 mb-6'>
@@ -11,4 +11,4 @@ const BenefitCard = ({name,description,icon}) => {
   )
 }
 
-export default BenefitCard
+export default FeatureCard
