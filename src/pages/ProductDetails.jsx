@@ -16,7 +16,7 @@ const ProductDetails = () => {
     <div>
       <DetailsHeader />
       {/* Imgs */}
-      <div className="py-[16rem] px-16 flex lg:flex-row flex-col justify-center gap-4 items-center">
+      <div className="py-[12rem] px-16 flex lg:flex-row flex-col gap-4 items-center">
         {/* imgs */}
         <div className="flex relative flex-col gap-6">
           {shownImg === 1 ? (
@@ -45,7 +45,7 @@ const ProductDetails = () => {
           </div>
         </div>
         {/* text */}
-        <div className="ml-10 lg:w-[220rem] w-fit">
+        <div className="lg:ml-10 lg:mt-0 mt-6 lg:w-[220rem] w-fit">
           <h1 className="lg:text-6xl text-4xl font-medium text-[#11334f] mb-10">
             {product.name}
           </h1>
