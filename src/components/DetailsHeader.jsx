@@ -45,6 +45,13 @@ const Header = () => {
                 <Link to="/">Accueil</Link>
               </li>
               <li
+                className={`text-2xl ${
+                  !activeNav ? "text-[#11334f]" : "text-[#fff]"
+                } transition font-normal `}
+              >
+                <Link to="/products">Produits</Link>
+              </li>
+              <li
                 onClick={() => {
                   setActiveCart(true);
                 }}
@@ -164,6 +171,11 @@ const Header = () => {
             <li className={`text-2xl transition font-medium text-[#fff]`}>
               <Link className="cursor-pointer" to={"/"}>
                 Accueil
+              </Link>
+            </li>
+            <li className={`text-2xl transition font-medium text-[#fff]`}>
+              <Link className="cursor-pointer" to={"/products"}>
+                Produits
               </Link>
             </li>
           </ul>
