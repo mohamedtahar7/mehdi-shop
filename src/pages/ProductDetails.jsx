@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { products } from "../utils/products";
 import { CartContext } from "../contexts/CartContext";
-import DetailsHeader from "../components/DetailsHeader";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 const ProductDetails = () => {
   const { id } = useParams();
@@ -14,7 +14,7 @@ const ProductDetails = () => {
   const [shownImg, setShownImg] = useState(0);
   return (
     <div>
-      <DetailsHeader />
+      <Header />
       {/* Imgs */}
       <div className="py-[12rem] px-16 flex lg:flex-row flex-col gap-4 items-center">
         {/* imgs */}

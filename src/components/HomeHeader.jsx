@@ -49,14 +49,7 @@ const HomeHeader = () => {
                   !activeNav ? "hover:text-[#11334f]" : ""
                 } transition font-normal text-[#fff] `}
               >
-                <a href="#about">A Propos</a>
-              </li>
-              <li
-                className={`text-2xl ${
-                  !activeNav ? "hover:text-[#11334f]" : ""
-                } transition font-normal text-[#fff] `}
-              >
-                <Link to="/products">Produits</Link>
+                <a href="#products">Produits</a>
               </li>
               <li
                 onClick={() => {
@@ -191,17 +184,9 @@ const HomeHeader = () => {
               onClick={() => setMobileNav(false)}
               className="text-2xl transition font-medium text-[#fff] "
             >
-              <a className="cursor-pointer" href="#about">
-                A Propos
-              </a>
-            </li>
-            <li
-              onClick={() => setMobileNav(false)}
-              className="text-2xl transition font-medium text-[#fff] "
-            >
-              <Link className="cursor-pointer" to="/products">
+              <a href="#products">
                 Produits
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

@@ -18,7 +18,7 @@ const Products = () => {
     products.slice(firstProductIndex, lastProductIndex) ||
     products.slice(firstProductIndex, products.length + 1);
   return (
-    <section>
+    <section id="products">
       <div className="h-auto py-40 px-20">
         <h1 className="sm:text-5xl text-3xl text-[#11334f] text-center">
           Nos Produits
