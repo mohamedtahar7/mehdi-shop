@@ -55,6 +55,9 @@ const ProductDetails = () => {
             delectus tempore aliquam iusto ducimus voluptatibus commodi, sint,
             dolores molestiae aut quo veniam explicabo!
           </p>
+          {product.dimensions&&<p className="text-xl text-[#11334f] mt-8 mb-8">
+            Dimensions : {product.dimensions}
+          </p>}
           <p className="text-xl text-[#11334f] mt-8 mb-8">
             Price : {product.price} DA
           </p>

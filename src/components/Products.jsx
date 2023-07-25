@@ -15,8 +15,7 @@ const Products = () => {
   const lastProductIndex = currentPage * productPerPage;
   const firstProductIndex = lastProductIndex - productPerPage;
   const currentProducts =
-    products.slice(firstProductIndex, lastProductIndex) ||
-    products.slice(firstProductIndex, products.length + 1);
+    products.slice(firstProductIndex, lastProductIndex)
   return (
     <section id="products">
       <div className="h-auto py-40 px-20">
@@ -65,10 +64,11 @@ const Products = () => {
         )}
         {category === "Chaises" && (
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {currentProducts.filter((item) => item.category === category)
-              .length >= productPerPage
-              ? currentProducts
+            {products.filter((item) => item.category === category)
+              .length > productPerPage
+              ? products
                   .filter((item) => item.category === category)
+                  .slice(firstProductIndex,lastProductIndex)
                   .map((chair) => (
                     <ProductCard
                       id={chair.id}
@@ -101,10 +101,11 @@ const Products = () => {
         )}
         {category === "Tables" && (
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {currentProducts.filter((item) => item.category === category)
-              .length >= productPerPage
-              ? currentProducts
+            {products.filter((item) => item.category === category)
+              .length > productPerPage
+              ? products
                   .filter((item) => item.category === category)
+                  .slice(firstProductIndex,lastProductIndex)
                   .map((table) => (
                     <ProductCard
                       id={table.id}
@@ -137,10 +138,11 @@ const Products = () => {
         )}
         {category === "Meubles" && (
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {currentProducts.filter((item) => item.category === category)
-              .length >= productPerPage
-              ? currentProducts
+            {products.filter((item) => item.category === category)
+              .length > productPerPage
+              ? products
                   .filter((item) => item.category === category)
+                  .slice(firstProductIndex,lastProductIndex)
                   .map((table) => (
                     <ProductCard
                       id={table.id}
@@ -173,10 +175,11 @@ const Products = () => {
         )}
         {category === "Banquettes" && (
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {currentProducts.filter((item) => item.category === category)
-              .length >= productPerPage
-              ? currentProducts
+            {products.filter((item) => item.category === category)
+              .length > productPerPage
+              ? products
                   .filter((item) => item.category === category)
+                  .slice(firstProductIndex,lastProductIndex)
                   .map((table) => (
                     <ProductCard
                       id={table.id}
