@@ -14,7 +14,7 @@ const About = () => {
             src="https://i.postimg.cc/fbYMh4Pm/about-logo.png"
             alt="logo"
           />
-          <p className="sm:text-3xl text-xl sm:leading-[4rem] leading-[3rem] text-[#11334f] ">
+          <p className="sm:text-3xl sm:w-[90%] w-[130%] text-xl sm:leading-[4rem] leading-[3rem] text-[#11334f] ">
             UniConfort Fabricant algérien de Mobiliers, depuis 1996. C’est une
             entreprise algérienne, spécialisés en aménagement des Hôtels,
             Restaurants et Collectivités.
