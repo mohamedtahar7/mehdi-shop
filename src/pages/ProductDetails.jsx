@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { useContext } from "react";
+import { useContext,useEffect } from "react";
 import { products } from "../utils/products";
 import { CartContext } from "../contexts/CartContext";
 import Header from "../components/Header";
@@ -12,6 +12,9 @@ const ProductDetails = () => {
   const { name, price, images } = product;
   const productToCart = { name, images, price };
   const [shownImg, setShownImg] = useState(0);
+  useEffect(()=>{
+    document.title = `${product.name}`;
+  },[])
   return (
     <div>
       <Header />
@@ -50,10 +53,7 @@ const ProductDetails = () => {
             {product.name}
           </h1>
           <p className="text-xl font- lg:w-[60%] text-[#11334f]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad
-            deserunt fugiat perspiciatis assumenda sunt consequuntur numquam
-            delectus tempore aliquam iusto ducimus voluptatibus commodi, sint,
-            dolores molestiae aut quo veniam explicabo!
+            {product.description}
           </p>
           {product.dimensions&&<p className="text-xl text-[#11334f] mt-8 mb-8">
             Dimensions : {product.dimensions}

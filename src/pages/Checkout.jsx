@@ -1,14 +1,16 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { useContext,useState } from 'react'
+import { useContext,useState,useEffect } from 'react'
 import { CartContext } from '../contexts/CartContext'
 import CheckoutContact from '../components/CheckoutContact'
 import CartItem from '../components/CartItem'
 const Checkout = () => {
     const [sucessOrder,setSuccessOrder] = useState(false)
     const {cart,itemAmount,total} = useContext(CartContext)
-    const cartLength = cart.length;
+    useEffect(()=>{
+      document.title = `Confirmez votre commande`;
+    },[])
   return (
     <div>
         <Header/>
