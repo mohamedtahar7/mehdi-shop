@@ -8,9 +8,9 @@ const Home = () => {
             Découvrez l'élégance intemporelle
             </h1>
             <p className='text-white mb-12 md:text-2xl text-xl font-medium'>Transformez votre espace avec notre collection de meubles exquis..</p>
-             <Link to="/products" className=' md:text-xl text-lg font-medium py-3 hover:bg-[#11334f] hover:border-none transition-all md:px-8 px-6 bg-none border-white border text-white'>
+             <a href="#products" className=' md:text-xl text-lg font-medium py-3 hover:bg-[#11334f] hover:border-none transition-all md:px-8 px-6 bg-none border-white border text-white'>
              Voir Nos Produits
-             </Link>
+             </a>
         </div>
     </section>
   )

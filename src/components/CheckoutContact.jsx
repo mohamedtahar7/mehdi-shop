@@ -55,7 +55,7 @@ const CheckoutContact = ({sucessOrder,setSuccessOrder}) => {
         <input defaultValue={total} name='total_price' type='number' className='hidden'/>
       </div>
       </div>
-      <button onClick={sendEmail} className='text-center py-2 px-4 bg-[#11334f] text-xl hover:opacity-80 transition-all text-white w-fit'>Commander</button>
+      <button type='submit' className='text-center py-2 px-4 bg-[#11334f] text-xl hover:opacity-80 transition-all text-white w-fit'>Commander</button>
     </form>
   )
 }
