@@ -125,6 +125,17 @@ export const products = [
                {image:'https://i.postimg.cc/vBpP3gGs/product-3-1.jpg'}
             ],
         },
+        {
+            name:'Meuble 3',
+            price:'36500.00',
+            id:'meuble-3',
+            category:'Meubles',
+            description:'',
+            images:[
+                {image:'https://i.postimg.cc/13bHhKGz/IMG-6663-1.jpg'},
+                {image:'https://i.postimg.cc/vmZjPhtS/IMG-6663.jpg'},
+            ],
+        },
         // Banquettes
         {
             name:'CozySeat',
