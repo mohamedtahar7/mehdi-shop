@@ -6,7 +6,8 @@ import {RiCustomerService2Line} from 'react-icons/ri'
 import {CiDeliveryTruck} from 'react-icons/ci'
 const Feature = () => {
   return (
-    <div className='px-20  bg-[#11334f]'>
+    <div className='px-20 border-t border-white bg-[#11334f]'>
+        <h1 className='className="sm:text-5xl text-3xl pt-4 text-white text-center mt-4'>Nos Avantages</h1>
         <div className='grid place-items-center lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 grid-cols-1  gap-12 py-12'>
             <FeatureCard  icon={<FiGrid size={45} className='text-[#fff]'/>} name={'Une grande sélection de produits'}/>
             <FeatureCard icon={<BiSolidCheckShield size={55} className='text-[#fff]'/>} name={'Produit de qualité'}/>

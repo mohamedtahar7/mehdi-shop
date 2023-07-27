@@ -4,6 +4,7 @@ import HomeHeader from '../components/HomeHeader'
 import Footer from "../components/Footer"
 import Products from '../components/Products'
 import Feature from '../components/Feature'
+import FeaturedIn from '../components/FeaturedIn'
 const HomePage = () => {
   useEffect(()=>{
     document.title = `Uniconfort Store | Meublez vos rêves`;
@@ -12,6 +13,7 @@ const HomePage = () => {
     <div>
         <HomeHeader/>
         <Home/>
+        <FeaturedIn/>
         <Feature/>
         <Products/>
         <Footer/>
