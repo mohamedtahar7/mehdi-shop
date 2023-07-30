@@ -23,7 +23,7 @@ const Products = () => {
           Nos Produits
         </h1>
         <div className="flex sm:flex-row flex-col justify-center gap-4 mt-6 items-center">
-          <h3 className="text-2xl text-[#11334f]">Filter : </h3>
+          <h3 className="text-2xl text-[#11334f]">Filter:</h3>
           <div className="flex md:flex-row flex-col sm:w-auto w-fit gap-4 items-center">
             {categories.map((type, index) => (
               <p
