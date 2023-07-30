@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="flex mb-10 md:flex-row md:justify-between flex-col gap-10 justify-center">
         <div className="lg:w-[50%]">
           <img className="w-48" src={logoW} alt="" />
-          <p className="text-lg leading-8 text-[#eee] mt-6">
+          <p className="text-xl xl:w-[35vw] leading-10 text-[#eee]  mt-6">
             UniConfort Fabricant algérien de Mobiliers, depuis 1996. C’est une
             entreprise algérienne, spécialisés en aménagement des Hôtels,
             Restaurants et Collectivités.

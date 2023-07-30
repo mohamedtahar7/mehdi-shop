@@ -14,8 +14,8 @@ const HomePage = () => {
         <HomeHeader/>
         <Home/>
         <FeaturedIn/>
-        <Feature/>
         <Products/>
+        <Feature/>
         <Footer/>
     </div>
   )
