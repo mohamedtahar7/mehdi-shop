@@ -158,6 +158,7 @@ const HomeHeader = () => {
               </p>
               <Link
                 to={"/checkout"}
+                onClick={()=>window.scrollTo(0,0)}
                 className="w-full py-4 px-2 text-center text-xl font-medium text-white bg-[#11334f]"
               >
                 Commander
