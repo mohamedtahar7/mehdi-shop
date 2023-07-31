@@ -27,7 +27,7 @@ const HomeHeader = () => {
           activeNav ? "bg-[#11334f]" : "bg-none"
         } transition-all sm:px-16 px-6 fixed w-full flex justify-between items-center`}
       >
-        <Link to="/">
+        <Link onClick={()=>window.scrollTo(0,0)} to="/">
           {activeNav ? (
             <img className="sm:w-48 w-40" src={logoW} alt="logo" />
           ) : (

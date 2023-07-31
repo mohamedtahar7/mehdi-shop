@@ -27,7 +27,7 @@ const Header = () => {
           activeNav ? "bg-[#11334f]" : "bg-none"
         } transition-all sm:px-16 px-6 fixed w-full flex justify-between items-center`}
       >
-        <Link to="/">
+        <Link onClick={()=>window.scrollTo(0,0)} to="/">
           {activeNav ? (
             <img className="sm:w-48 w-40" src={logoW} alt="logo" />
           ) : (
@@ -42,7 +42,7 @@ const Header = () => {
                   !activeNav ? "text-[#11334f]" : "text-[#fff]"
                 } transition font-normal `}
               >
-                <Link to="/">Accueil</Link>
+                <Link onClick={()=>window.scrollTo(0,0)} to="/">Accueil</Link>
               </li>
               <li
                 onClick={() => {
@@ -162,7 +162,7 @@ const Header = () => {
         >
           <ul className="flex flex-col gap-8 items-center">
             <li className={`text-2xl transition font-medium text-[#fff]`}>
-              <Link className="cursor-pointer" to={"/"}>
+              <Link onClick={()=>window.scrollTo(0,0)} className="cursor-pointer" to={"/"}>
                 Accueil
               </Link>
             </li>

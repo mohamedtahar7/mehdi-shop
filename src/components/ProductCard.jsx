@@ -22,7 +22,7 @@ const ProductCard = ({ image, price, name, id }) => {
           className="p-3 bg-[#11334f] text-white cursor-pointer"
           size={50}
         />
-        <Link to={`/product/${id}`}>
+        <Link onClick={()=>window.scrollTo(0,0)} to={`/product/${id}`}>
           <AiOutlineEye
             className="p-3 bg-white text-[#11334f] cursor-pointer"
             size={50}
