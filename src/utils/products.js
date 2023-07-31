@@ -159,4 +159,48 @@ export const products = [
                {image:'https://i.postimg.cc/15dkbtMf/product-3-1.jpg'}
             ],
         },
+        {
+            name:'Banquette A Caroux',
+            price:'17500.00',
+            id:'banquette-caroux',
+            category:'Banquettes',
+            description:'',
+            images:[
+               {image:'https://i.postimg.cc/0QbZtYRC/20230726-114004.jpg',},
+               {image:'https://i.postimg.cc/HxRzFrT1/20230726-114043.jpg'}
+            ],
+        },
+        {
+            name:'Banquette Smoking',
+            price:'17500.00',
+            id:'banquette-smoking',
+            category:'Banquettes',
+            description:'',
+            images:[
+               {image:'https://i.postimg.cc/gkRtFHwS/20230726-112757.jpg',},
+               {image:'https://i.postimg.cc/3xTSK0mK/20230726-112839.jpg'}
+            ],
+        },
+        {
+            name:'Banquette Couck',
+            price:'17500.00',
+            id:'banquette-couck',
+            category:'Banquettes',
+            description:'',
+            images:[
+                {image:'https://i.postimg.cc/3wLnCL6R/20230726-105218.jpg'},
+                {image:'https://i.postimg.cc/nLV3m83g/20230726-105052.jpg',}
+            ],
+        },
+        {
+            name:'Banquette PatchWork ',
+            price:'17500.00',
+            id:'banquette-patchwork',
+            category:'Banquettes',
+            description:'',
+            images:[
+               {image:'https://i.postimg.cc/sDFKcGnp/20230726-114928.jpg',},
+               {image:'https://i.postimg.cc/v8x3ftvY/20230726-115031.jpg'}
+            ],
+        },
 ]
