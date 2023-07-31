@@ -29,9 +29,9 @@ const HomeHeader = () => {
       >
         <Link onClick={()=>window.scrollTo(0,0)} to="/">
           {activeNav ? (
-            <img className="sm:w-48 w-40" src={logoW} alt="logo" />
+            <img className="sm:w-48 w-40" src={logoW} alt="uniconfort meuble logo" />
           ) : (
-            <img className="sm:w-48 w-40" src={logoB} alt="logo" />
+            <img className="sm:w-48 w-40" src={logoB} alt="uniconfort meuble logo" />
           )}
         </Link>
         <div className="lg:block hidden">
