@@ -5,7 +5,7 @@ import { products } from "../utils/products";
 import { CartContext } from "../contexts/CartContext";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import ProductCard from "../components/ProductCard";
+import SimilarProductsCard from "../components/SimilarProductsCard";
 const ProductDetails = () => {
   const { id } = useParams();
   const { addToCart, cart } = useContext(CartContext);
@@ -76,7 +76,7 @@ const ProductDetails = () => {
         <h3 className="text-[#11334f] text-xl md:text-2xl font-medium mb-6">Produits Similaires</h3>
        <div className="grid place-items-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-12">
         {similarProducts.map((item)=>(
-          <ProductCard id={item.id}
+          <SimilarProductsCard id={item.id}
           key={item.id}
           name={item.name}
           price={item.price}
