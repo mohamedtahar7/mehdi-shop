@@ -5,11 +5,13 @@ import { products } from "../utils/products";
 import { CartContext } from "../contexts/CartContext";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ProductCard from "../components/ProductCard";
 const ProductDetails = () => {
   const { id } = useParams();
   const { addToCart, cart } = useContext(CartContext);
   const product = products.find((item) => item.id === id);
-  const { name, price, images } = product;
+  const { name, price, images,category} = product;
+  const similarProducts = products.filter((prod)=>prod.category===category&&prod.id!==id)
   const productToCart = { name, images, price };
   const [shownImg, setShownImg] = useState(0);
   useEffect(()=>{
@@ -19,7 +21,7 @@ const ProductDetails = () => {
     <div>
       <Header />
       {/* Imgs */}
-      <div className="py-[12rem] px-16 flex lg:flex-row flex-col gap-4 items-center">
+      <div className="pt-[12rem] px-16 flex lg:flex-row lg:justify-normal justify-start flex-col gap-4 items-center">
         {/* imgs */}
         <div className="flex relative flex-col gap-6">
           {shownImg === 1 ? (
@@ -48,8 +50,8 @@ const ProductDetails = () => {
           </div>
         </div>
         {/* text */}
-        <div className="lg:ml-10 lg:mt-0 mt-6 lg:w-[220rem] w-fit">
-          <h1 className="lg:text-6xl text-4xl font-medium text-[#11334f] mb-10">
+        <div className="lg:ml-10 lg:mt-0 mt-6 lg:w-[220rem] w-full">
+          <h1 className="lg:text-6xl sm:text-6xl text-4xl font-medium text-[#11334f] mb-10">
             {product.name}
           </h1>
           <p className="text-xl font- lg:w-[60%] text-[#11334f]">
@@ -68,6 +70,19 @@ const ProductDetails = () => {
             Add To Cart
           </button>
         </div>
+      </div>
+      {/* Similar Products */}
+      <div className="px-16 py-16 mt-6">
+        <h3 className="text-[#11334f] text-xl md:text-2xl font-medium mb-6">Produits Similaires</h3>
+       <div className="grid place-items-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-12">
+        {similarProducts.map((item)=>(
+          <ProductCard id={item.id}
+          key={item.id}
+          name={item.name}
+          price={item.price}
+          image={item.images[0].image}/>
+        ))}
+       </div>
       </div>
       <Footer />
     </div>

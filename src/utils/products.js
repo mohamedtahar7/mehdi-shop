@@ -18,8 +18,8 @@ export const products = [
             category:'Chaises',
             description:'',
             images:[
-                {image:'https://i.postimg.cc/LsZCh2kQ/product-2.jpg'},
-                {image:'https://i.postimg.cc/8s9dVfYp/product-2-1.jpg'},
+                {image:'https://i.postimg.cc/s2s0Nr5c/product-2.jpg'},
+                {image:'https://i.postimg.cc/LsD0dbTM/product-2-1.jpg'},
             ],
         },
         {
