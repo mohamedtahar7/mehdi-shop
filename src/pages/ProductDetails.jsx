@@ -1,4 +1,6 @@
 import { useParams } from "react-router-dom";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { useState } from "react";
 import { useContext,useEffect } from "react";
 import { products } from "../utils/products";
@@ -14,6 +16,25 @@ const ProductDetails = () => {
   const similarProducts = products.filter((prod)=>prod.category===category&&prod.id!==id)
   const productToCart = { name, images, price };
   const [shownImg, setShownImg] = useState(0);
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 1280 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 1280, min: 1024 },
+      items: 4
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 480 },
+      items: 3
+    },
+    mobile: {
+      breakpoint: { max: 480, min: 0 },
+      items: 2
+    }
+  };
   useEffect(()=>{
     document.title = `${product.name}`;
   },[])
@@ -74,7 +95,7 @@ const ProductDetails = () => {
       {/* Similar Products */}
       <div className="px-16 py-16 mt-6">
         <h3 className="text-[#11334f] text-2xl md:text-3xl font-medium mb-10">Produits Similaires :</h3>
-       <div className="grid place-items-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-6 gap-x-6">
+       <Carousel responsive={responsive}>
         {similarProducts.map((item)=>(
           <SimilarProductsCard id={item.id}
           key={item.id}
@@ -82,7 +103,7 @@ const ProductDetails = () => {
           price={item.price}
           image={item.images[0].image}/>
         ))}
-       </div>
+       </Carousel>
       </div>
       <Footer />
     </div>
