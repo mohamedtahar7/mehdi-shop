@@ -73,7 +73,7 @@ const ProductDetails = () => {
       </div>
       {/* Similar Products */}
       <div className="px-16 py-16 mt-6">
-        <h3 className="text-[#11334f] text-xl md:text-2xl font-medium mb-10">Produits Similaires :</h3>
+        <h3 className="text-[#11334f] text-2xl md:text-3xl font-medium mb-10">Produits Similaires :</h3>
        <div className="grid place-items-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-6 gap-x-6">
         {similarProducts.map((item)=>(
           <SimilarProductsCard id={item.id}
