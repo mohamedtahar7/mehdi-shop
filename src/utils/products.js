@@ -91,6 +91,30 @@ export const products = [
                 {image:'https://i.postimg.cc/gjMQ84xg/product-2-1.jpg'},
             ],
         },
+        {
+            name:'Comfort Table',
+            price:'17500.00',
+            id:'comfort-table',
+            category:'Tables',
+            description:'',
+            dimensions:"120cm/60cm",
+            images:[
+                {image:'https://i.postimg.cc/Z5Bw3tfc/image00006-1-5x.jpg'},
+                {image:'https://i.postimg.cc/g2CNHSQP/image00005-1-5x.jpg'},
+            ],
+        },
+        {
+            name:'Soothe Table',
+            price:'17500.00',
+            id:'soothe-table',
+            category:'Tables',
+            description:'',
+            dimensions:"120cm/60cm",
+            images:[
+                {image:'https://i.postimg.cc/5t8p75WQ/image00009-1-5x.jpg'},
+                {image:'https://i.postimg.cc/FsnP7sxz/image00010-1-5x.jpg'},
+            ],
+        },
         // Meubles
         {
             name:'Meuble 1',
