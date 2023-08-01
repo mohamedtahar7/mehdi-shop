@@ -8,9 +8,12 @@ import { meubles } from "../utils/meubles";
 import { banquettes } from "../utils/banquettes";
 import { categories } from "../utils/categories";
 import Header from "./Header";
+import { PageContext } from "../contexts/PageContext";
+import { useContext } from "react";
 const Products = () => {
-  const [category, setCategory] = useState("Tout");
-  const [currentPage, setCurrentPage] = useState(1);
+  const [category, setCategory] = useState('Tout')
+  // const [currentPage, setCurrentPage] = useState(1);
+  const {currentPage,setCurrentPage} = useContext(PageContext)
   const productPerPage = 6;
   const lastProductIndex = currentPage * productPerPage;
   const firstProductIndex = lastProductIndex - productPerPage;
