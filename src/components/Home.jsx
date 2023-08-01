@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom' 
 const Home = () => {
   return (
-    <section className='sm:py-80 py-36 lg:py-48 xl:py-56 2xl:py-96 px-20 bg-[url("/src/assets/home-bg1.jpg")] bg-no-repeat bg-center bg-cover bg-fixed h-[100vh] w-full'>
+    <section className='sm:py-80 py-36 lg:py-48 xl:py-56 2xl:py-96 px-20 bg-[url("/src/assets/home-bg2.jpg")] bg-no-repeat bg-center bg-cover bg-fixed h-[100vh] w-full'>
         <div className='text-center lg:-mt-8'>
             <h1 className='md:text-8xl text-[2.8rem] text-white font-semibold mb-12'>
             Découvrez l'élégance intemporelle
