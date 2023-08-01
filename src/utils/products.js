@@ -125,6 +125,83 @@ export const products = [
                {image:'https://i.postimg.cc/vBpP3gGs/product-3-1.jpg'}
             ],
         },
+        {
+            name:'Coiffeuse 2',
+            price:'36500.00',
+            id:'coiffeuse-2',
+            category:'Meubles',
+            description:'',
+            images:[
+               {image:'https://i.postimg.cc/hGxh3xwq/2822-2812.jpg'},
+               {image:'https://i.postimg.cc/Kz24XjS3/20230726-102847.jpg'}
+            ],
+        },
+        {
+            name:'Coiffeuse 3',
+            price:'36500.00',
+            id:'coiffeuse-3',
+            category:'Meubles',
+            description:'',
+            images:[
+               {image:'https://i.postimg.cc/d1wQHfr8/IMG-6587.jpg'},
+               {image:'https://i.postimg.cc/7Y6hrjc9/20230726-133651.jpg'}
+            ],
+        },
+        {
+            name:'Coiffeuse 4',
+            price:'36500.00',
+            id:'coiffeuse-4',
+            category:'Meubles',
+            description:'',
+            images:[
+                {image:'https://i.postimg.cc/wMWBsktD/20230726-135411.jpg'},
+                {image:'https://i.postimg.cc/RFLhvm4s/20230726-135005.jpg'}
+            ],
+        },
+        {
+            name:'Coiffeuse 5',
+            price:'36500.00',
+            id:'coiffeuse-5',
+            category:'Meubles',
+            description:'',
+            images:[
+               {image:'https://i.postimg.cc/wMxvvrB6/20230726-140318.jpg'},
+               {image:'https://i.postimg.cc/h4MvwKCh/20230726-140840.jpg'}
+            ],
+        },
+        {
+            name:'Meuble 3',
+            price:'36500.00',
+            id:'meuble-3',
+            category:'Meubles',
+            description:'',
+            images:[
+               {image:'https://i.postimg.cc/yxN1BSfx/IMG-6663.jpg'},
+               {image:'https://i.postimg.cc/8cn1CP3H/IMG-6670.jpg'}
+            ],
+        },
+        {
+            name:'Meuble 4',
+            price:'36500.00',
+            id:'meuble-4',
+            category:'Meubles',
+            description:'',
+            images:[
+               {image:'https://i.postimg.cc/28K6k2ND/20230726-142251.jpg'},
+               {image:'https://i.postimg.cc/cJqLYCJk/20230726-142406.jpg'}
+            ],
+        },
+        {
+            name:'Meuble 5',
+            price:'36500.00',
+            id:'meuble-5',
+            category:'Meubles',
+            description:'',
+            images:[
+               {image:'https://i.postimg.cc/FKjsxvdr/20230726-142820.jpg'},
+               {image:'https://i.postimg.cc/Y9RrJxzT/IMG-6656.jpg'}
+            ],
+        },
         // Banquettes
         {
             name:'CozySeat',
