@@ -31,7 +31,7 @@ const Footer = () => {
           <div className="flex items-center gap-3 mt-3">
             <LuMail size={25} className="text-[#eee]" />
             <h4 className="text-lg text-[#eee]">
-              contact@uniconfort-store.com
+              contact@uniconfortmeuble.store
             </h4>
           </div>
         </div>
