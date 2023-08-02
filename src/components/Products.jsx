@@ -6,12 +6,14 @@ import { tables } from "../utils/tables";
 import { products } from "../utils/products";
 import { meubles } from "../utils/meubles";
 import { banquettes } from "../utils/banquettes";
-import { categories } from "../utils/categories";
+// import { categories } from "../utils/categories";
 import Header from "./Header";
 import { PageContext } from "../contexts/PageContext";
 import { useContext } from "react";
+import { CategoryContext } from "../contexts/CategoryContext";
 const Products = () => {
-  const [category, setCategory] = useState('Tout')
+  const {categories,category,setCategory} = useContext(CategoryContext)
+  // const [category, setCategory] = useState('Tout')
   // const [currentPage, setCurrentPage] = useState(1);
   const {currentPage,setCurrentPage} = useContext(PageContext)
   const productPerPage = 6;
