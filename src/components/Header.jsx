@@ -45,6 +45,13 @@ const Header = () => {
                 <Link onClick={()=>window.scrollTo(0,0)} to="/">Accueil</Link>
               </li>
               <li
+                className={`text-2xl ${
+                  !activeNav ? "text-[#11334f]" : "text-[#fff]"
+                } transition font-normal `}
+              >
+                <Link onClick={()=>window.scrollTo(0,0)} to="/#products">Products</Link>
+              </li>
+              <li
                 onClick={() => {
                   setActiveCart(true);
                 }}
@@ -165,6 +172,11 @@ const Header = () => {
             <li className={`text-2xl transition font-medium text-[#fff]`}>
               <Link onClick={()=>window.scrollTo(0,0)} className="cursor-pointer" to={"/"}>
                 Accueil
+              </Link>
+            </li>
+            <li className={`text-2xl transition font-medium text-[#fff]`}>
+              <Link onClick={()=>window.scrollTo(0,0)} className="cursor-pointer" to={"/#products"}>
+                Products
               </Link>
             </li>
           </ul>

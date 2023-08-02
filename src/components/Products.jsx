@@ -1,6 +1,6 @@
 import ProductCard from "./ProductCard";
 import Pagination from "./Pagination";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { chairs } from "../utils/chairs";
 import { tables } from "../utils/tables";
 import { products } from "../utils/products";
@@ -19,8 +19,22 @@ const Products = () => {
   const productPerPage = 6;
   const lastProductIndex = currentPage * productPerPage;
   const firstProductIndex = lastProductIndex - productPerPage;
-  const currentProducts =
-    products.slice(firstProductIndex, lastProductIndex)
+  const currentProducts = products.slice(firstProductIndex, lastProductIndex)
+  useEffect(() => {
+    // Get the hash from the URL (e.g., "#contact")
+    const hash = window.location.hash;
+
+    // If there is a hash, remove the "#" symbol to get the element ID
+    const id = hash ? hash.slice(1) : null;
+
+    // If there is an element ID, scroll to it
+    if (id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
   return (
     <section id="products">
       <div className="h-auto py-40 px-20">
