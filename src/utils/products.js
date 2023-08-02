@@ -93,11 +93,11 @@ export const products = [
         },
         {
             name:'Comfort Table',
-            price:'17500.00',
+            price:'15500.00',
             id:'comfort-table',
             category:'Tables',
             description:'',
-            dimensions:"120cm/60cm",
+            dimensions:"60cm/60cm",
             images:[
                 {image:'https://i.postimg.cc/Z5Bw3tfc/image00006-1-5x.jpg'},
                 {image:'https://i.postimg.cc/g2CNHSQP/image00005-1-5x.jpg'},
@@ -117,9 +117,9 @@ export const products = [
         },
         // Meubles
         {
-            name:'Meuble 1',
+            name:'Brillo',
             price:'39500.00',
-            id:'meuble-1',
+            id:'brillo',
             category:'Meubles',
             description:'',
             images:[
@@ -128,9 +128,9 @@ export const products = [
             ],
         },
         {
-            name:'Meuble 2',
+            name:'Tesoro',
             price:'36500.00',
-            id:'meuble-2',
+            id:'tesoro',
             category:'Meubles',
             description:'',
             images:[
@@ -139,9 +139,9 @@ export const products = [
             ],
         },
         {
-            name:'Coiffeuse 1',
+            name:'Coiffeuse Stella',
             price:'36500.00',
-            id:'coiffeuse-1',
+            id:'coiffeuse-stella',
             category:'Meubles',
             description:'',
             images:[
@@ -150,9 +150,9 @@ export const products = [
             ],
         },
         {
-            name:'Coiffeuse 2',
+            name:'Coiffeuse Bella',
             price:'36500.00',
-            id:'coiffeuse-2',
+            id:'coiffeuse-bella',
             category:'Meubles',
             description:'',
             images:[
@@ -161,9 +161,9 @@ export const products = [
             ],
         },
         {
-            name:'Coiffeuse 3',
+            name:'Coiffeuse Bella',
             price:'36500.00',
-            id:'coiffeuse-3',
+            id:'coiffeuse-bella-2',
             category:'Meubles',
             description:'',
             images:[
@@ -172,9 +172,9 @@ export const products = [
             ],
         },
         {
-            name:'Coiffeuse 4',
+            name:'Coiffeuse Stella',
             price:'36500.00',
-            id:'coiffeuse-4',
+            id:'coiffeuse-stella-2',
             category:'Meubles',
             description:'',
             images:[
@@ -183,9 +183,9 @@ export const products = [
             ],
         },
         {
-            name:'Coiffeuse 5',
+            name:'Coiffeuse Stella',
             price:'36500.00',
-            id:'coiffeuse-5',
+            id:'coiffeuse-stella-2',
             category:'Meubles',
             description:'',
             images:[
@@ -216,7 +216,7 @@ export const products = [
             ],
         },
         {
-            name:'Meuble 5',
+            name:'Fresco',
             price:'36500.00',
             id:'meuble-5',
             category:'Meubles',
@@ -261,9 +261,9 @@ export const products = [
             ],
         },
         {
-            name:'Banquette A Caroux',
+            name:'BriseSeat',
             price:'17500.00',
-            id:'banquette-caroux',
+            id:'brise-seat',
             category:'Banquettes',
             description:'',
             images:[
@@ -272,9 +272,9 @@ export const products = [
             ],
         },
         {
-            name:'Banquette Smoking',
+            name:'SmokingSofa',
             price:'17500.00',
-            id:'banquette-smoking',
+            id:'smoking-sofa',
             category:'Banquettes',
             description:'',
             images:[
@@ -283,9 +283,9 @@ export const products = [
             ],
         },
         {
-            name:'Banquette Couck',
+            name:'CalmSeat',
             price:'17500.00',
-            id:'banquette-couck',
+            id:'calm-seat',
             category:'Banquettes',
             description:'',
             images:[
@@ -294,9 +294,9 @@ export const products = [
             ],
         },
         {
-            name:'Banquette PatchWork ',
+            name:'Realxlounge',
             price:'17500.00',
-            id:'banquette-patchwork',
+            id:'relaxloung-2',
             category:'Banquettes',
             description:'',
             images:[
