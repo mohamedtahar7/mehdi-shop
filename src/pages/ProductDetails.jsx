@@ -82,7 +82,7 @@ const ProductDetails = () => {
             Dimensions : {product.dimensions}
           </p>}
           <p className="text-xl text-[#11334f] mt-8 mb-8">
-            Price : {product.price} DA
+            Prix : {product.price} DA
           </p>
           <button
             onClick={() => addToCart(product, id)}
