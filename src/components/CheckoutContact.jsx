@@ -9,7 +9,7 @@ const CheckoutContact = ({sucessOrder,setSuccessOrder}) => {
     Swal.fire({
       position: 'top-end',
       icon: 'success',
-      title: 'Votre Commande a été envoyer',
+      title: 'Votre Commande a été envoyée',
       showConfirmButton: false,
       timer: 3000
     })
