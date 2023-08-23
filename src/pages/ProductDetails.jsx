@@ -88,7 +88,7 @@ const ProductDetails = () => {
             onClick={() => addToCart(product, id)}
             className="py-3 px-8 bg-[#11334f] text-white hover:opacity-80 transition-all"
           >
-            Add To Cart
+            Ajouter au Panier
           </button>
         </div>
       </div>
