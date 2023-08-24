@@ -1,6 +1,6 @@
 import logoB from "/src/assets/logo.png";
 import logoW from "/src/assets/LOGO VIDE 2.png";
-import { Link } from "react-router-dom";
+import { Link as Link2 } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
 import { HiArrowRight } from "react-icons/hi";
 import { useContext } from "react";
@@ -10,6 +10,7 @@ import { FiMenu } from "react-icons/fi";
 import { CgClose } from "react-icons/cg";
 import { useState, useEffect } from "react";
 import CartItem from "./CartItem";
+import { Link } from "react-scroll";
 const HomeHeader = () => {
   const [activeCart, setActiveCart] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
@@ -27,29 +28,60 @@ const HomeHeader = () => {
           activeNav ? "bg-[#11334f]" : "bg-none"
         } transition-all sm:px-16 px-6 fixed w-full flex justify-between items-center`}
       >
-        <Link onClick={()=>window.scrollTo(0,0)} to="/">
+        <Link
+          className="cursor-pointer"
+          to="hero"
+          spy={true}
+          smooth={true}
+          offset={-250}
+          duration={500}
+        >
           {activeNav ? (
-            <img className="sm:w-48 w-40" src={logoW} alt="uniconfort meuble logo" />
+            <img
+              className="sm:w-48 w-40"
+              src={logoW}
+              alt="uniconfort meuble logo"
+            />
           ) : (
-            <img className="sm:w-48 w-40" src={logoB} alt="uniconfort meuble logo" />
+            <img
+              className="sm:w-48 w-40"
+              src={logoB}
+              alt="uniconfort meuble logo"
+            />
           )}
         </Link>
         <div className="lg:block hidden">
           <div>
             <ul className="flex items-center gap-12">
               <li
-                className={`text-2xl ${
+                className={`text-2xl cursor-pointer ${
                   !activeNav ? "hover:text-[#11334f]" : ""
                 } transition font-normal text-[#fff] `}
               >
-                <a href="#">Accueil</a>
+                <Link
+                  to="hero"
+                  spy={true}
+                  smooth={true}
+                  offset={-250}
+                  duration={500}
+                >
+                  Accueil
+                </Link>
               </li>
               <li
                 className={`text-2xl ${
                   !activeNav ? "hover:text-[#11334f]" : ""
-                } transition font-normal text-[#fff] `}
+                } transition cursor-pointer font-normal text-[#fff] `}
               >
-                <a href="#products">Produits</a>
+                <Link
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                  to="products"
+                >
+                  Produits
+                </Link>
               </li>
               <li
                 onClick={() => {
@@ -156,13 +188,13 @@ const HomeHeader = () => {
               >
                 Continuer Vos Achats
               </p>
-              <Link
+              <Link2
                 to={"/checkout"}
-                onClick={()=>window.scrollTo(0,0)}
+                onClick={() => window.scrollTo(0, 0)}
                 className="w-full py-4 px-2 text-center text-xl font-medium text-white bg-[#11334f]"
               >
                 Commander
-              </Link>
+              </Link2>
             </div>
           )}
         </div>
@@ -175,19 +207,32 @@ const HomeHeader = () => {
           <ul className="flex flex-col gap-8 items-center">
             <li
               onClick={() => setMobileNav(false)}
-              className="text-2xl transition font-medium text-[#fff] "
+              className="text-2xl cursor-pointer transition font-medium text-[#fff] "
             >
-              <a className="cursor-pointer" href="#">
+              <Link
+                to="hero"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+                className="cursor-pointer"
+              >
                 Accueil
-              </a>
+              </Link>
             </li>
             <li
               onClick={() => setMobileNav(false)}
-              className="text-2xl transition font-medium text-[#fff] "
+              className="text-2xl cursor-pointer transition font-medium text-[#fff] "
             >
-              <a href="#products">
+              <Link
+                to="products"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
                 Produits
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
