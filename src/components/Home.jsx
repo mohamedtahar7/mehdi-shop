@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-scroll";
 const Home = () => {
   return (
     <section
@@ -12,12 +12,16 @@ const Home = () => {
         <p className="text-white mb-12 md:text-2xl text-xl font-medium">
           Transformez votre espace avec notre collection de meubles exquis..
         </p>
-        <a
-          href="#products"
-          className=" md:text-xl text-lg font-medium py-3 hover:bg-[#11334f] hover:border-none transition-all md:px-8 px-6 bg-none border-white border text-white"
+        <Link
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+          to="products"
+          className="cursor-pointer md:text-xl text-lg font-medium py-3 hover:bg-[#11334f] hover:border-none transition-all md:px-8 px-6 bg-none border-white border text-white"
         >
           Voir Nos Produits
-        </a>
+        </Link>
       </div>
     </section>
   );
