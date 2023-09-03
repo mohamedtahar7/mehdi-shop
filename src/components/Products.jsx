@@ -1,6 +1,6 @@
 import ProductCard from "./ProductCard";
 import Pagination from "./Pagination";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { chairs } from "../utils/chairs";
 import { tables } from "../utils/tables";
 import { products } from "../utils/products";
@@ -9,17 +9,18 @@ import { banquettes } from "../utils/banquettes";
 // import { categories } from "../utils/categories";
 import Header from "./Header";
 import { PageContext } from "../contexts/PageContext";
+import { motion } from "framer-motion";
 import { useContext } from "react";
 import { CategoryContext } from "../contexts/CategoryContext";
 const Products = () => {
-  const {categories,category,setCategory} = useContext(CategoryContext)
+  const { categories, category, setCategory } = useContext(CategoryContext);
   // const [category, setCategory] = useState('Tout')
   // const [currentPage, setCurrentPage] = useState(1);
-  const {currentPage,setCurrentPage} = useContext(PageContext)
+  const { currentPage, setCurrentPage } = useContext(PageContext);
   const productPerPage = 6;
   const lastProductIndex = currentPage * productPerPage;
   const firstProductIndex = lastProductIndex - productPerPage;
-  const currentProducts = products.slice(firstProductIndex, lastProductIndex)
+  const currentProducts = products.slice(firstProductIndex, lastProductIndex);
   useEffect(() => {
     // Get the hash from the URL (e.g., "#contact")
     const hash = window.location.hash;
@@ -31,21 +32,29 @@ const Products = () => {
     if (id) {
       const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
   }, []);
   return (
     <section id="products">
       <div className="h-auto py-40 px-20">
-        <h1 className="sm:text-5xl text-3xl text-[#11334f] text-center">
+        <motion.h1
+          whileInView={{ x: 0, opacity: 100 }}
+          initial={{ x: -50, opacity: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="sm:text-5xl text-3xl text-[#11334f] text-center"
+        >
           Nos Produits
-        </h1>
+        </motion.h1>
         <div className="flex sm:flex-row flex-col justify-center gap-4 mt-10 items-center">
           <h3 className="text-2xl text-[#11334f]">Filter:</h3>
           <div className="flex md:flex-row flex-col sm:w-auto w-fit gap-4 items-center">
             {categories.map((type, index) => (
-              <p
+              <motion.p
+                whileInView={{ x: 0, opacity: 100 }}
+                initial={{ x: -50, opacity: 40 }}
+                transition={{ delay: 0.2, duration: index / 5 }}
                 onClick={() => {
                   setCategory(type);
                   setCurrentPage(1);
@@ -56,21 +65,24 @@ const Products = () => {
                 } px-4 transition-all border border-[#11334f]`}
               >
                 {type}
-              </p>
+              </motion.p>
             ))}
           </div>
         </div>
         {category === "Tout" && (
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {currentProducts.map((product) => (
-              <ProductCard
-                id={product.id}
-                key={product.id}
-                name={product.name}
-                price={product.price}
-                image={product.images[0].image}
-              />
-            ))}
+            {products
+              .slice(firstProductIndex, lastProductIndex)
+              .map((product, index) => (
+                <ProductCard
+                  index={index}
+                  id={product.id}
+                  key={product.id}
+                  name={product.name}
+                  price={product.price}
+                  image={product.images[0].image}
+                />
+              ))}
           </div>
         )}
         {category === "Tout" && (
@@ -83,13 +95,14 @@ const Products = () => {
         )}
         {category === "Chaises" && (
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {products.filter((item) => item.category === category)
-              .length > productPerPage
+            {products.filter((item) => item.category === category).length >
+            productPerPage
               ? products
                   .filter((item) => item.category === category)
-                  .slice(firstProductIndex,lastProductIndex)
-                  .map((chair) => (
+                  .slice(firstProductIndex, lastProductIndex)
+                  .map((chair, index) => (
                     <ProductCard
+                      index={index}
                       id={chair.id}
                       key={chair.id}
                       name={chair.name}
@@ -99,8 +112,9 @@ const Products = () => {
                   ))
               : products
                   .filter((item) => item.category === category)
-                  .map((chair) => (
+                  .map((chair, index) => (
                     <ProductCard
+                      index={index}
                       id={chair.id}
                       key={chair.id}
                       name={chair.name}
@@ -120,13 +134,14 @@ const Products = () => {
         )}
         {category === "Tables" && (
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {products.filter((item) => item.category === category)
-              .length > productPerPage
+            {products.filter((item) => item.category === category).length >
+            productPerPage
               ? products
                   .filter((item) => item.category === category)
-                  .slice(firstProductIndex,lastProductIndex)
-                  .map((table) => (
+                  .slice(firstProductIndex, lastProductIndex)
+                  .map((table, index) => (
                     <ProductCard
+                      index={index}
                       id={table.id}
                       key={table.id}
                       name={table.name}
@@ -136,8 +151,9 @@ const Products = () => {
                   ))
               : products
                   .filter((item) => item.category === category)
-                  .map((table) => (
+                  .map((table, index) => (
                     <ProductCard
+                      index={index}
                       id={table.id}
                       key={table.id}
                       name={table.name}
@@ -157,13 +173,14 @@ const Products = () => {
         )}
         {category === "Meubles" && (
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {products.filter((item) => item.category === category)
-              .length > productPerPage
+            {products.filter((item) => item.category === category).length >
+            productPerPage
               ? products
                   .filter((item) => item.category === category)
-                  .slice(firstProductIndex,lastProductIndex)
-                  .map((table) => (
+                  .slice(firstProductIndex, lastProductIndex)
+                  .map((table, index) => (
                     <ProductCard
+                      index={index}
                       id={table.id}
                       key={table.id}
                       name={table.name}
@@ -173,8 +190,9 @@ const Products = () => {
                   ))
               : products
                   .filter((item) => item.category === category)
-                  .map((table) => (
+                  .map((table, index) => (
                     <ProductCard
+                      index={index}
                       id={table.id}
                       key={table.id}
                       name={table.name}
@@ -194,13 +212,14 @@ const Products = () => {
         )}
         {category === "Banquettes" && (
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {products.filter((item) => item.category === category)
-              .length > productPerPage
+            {products.filter((item) => item.category === category).length >
+            productPerPage
               ? products
                   .filter((item) => item.category === category)
-                  .slice(firstProductIndex,lastProductIndex)
-                  .map((table) => (
+                  .slice(firstProductIndex, lastProductIndex)
+                  .map((table, index) => (
                     <ProductCard
+                      index={index}
                       id={table.id}
                       key={table.id}
                       name={table.name}
@@ -210,8 +229,9 @@ const Products = () => {
                   ))
               : products
                   .filter((item) => item.category === category)
-                  .map((table) => (
+                  .map((table, index) => (
                     <ProductCard
+                      index={index}
                       id={table.id}
                       key={table.id}
                       name={table.name}

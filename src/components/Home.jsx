@@ -1,4 +1,5 @@
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 const Home = () => {
   return (
     <section
@@ -6,13 +7,26 @@ const Home = () => {
       className='sm:py-80 py-36 lg:py-48 xl:py-56 2xl:py-96 px-20 bg-[url("/src/assets/home-bg2.jpg")] bg-no-repeat bg-center bg-cover bg-fixed h-[100vh] w-full'
     >
       <div className="text-center lg:-mt-8">
-        <h1 className="md:text-8xl text-[2.8rem] text-white font-semibold mb-12">
+        <motion.h1
+          whileInView={{ x: 0, opacity: 100 }}
+          initial={{ x: -50, opacity: 0 }}
+          transition={{ delay: 0.2, duration: 1 }}
+          className="md:text-8xl text-[2.8rem] text-[#eee] stroke-white font-semibold mb-12"
+        >
           Découvrez l'élégance intemporelle
-        </h1>
-        <p className="text-white mb-12 md:text-2xl text-xl font-medium">
+        </motion.h1>
+        <motion.p
+          whileInView={{ x: 0, opacity: 100 }}
+          initial={{ x: -50, opacity: 0 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="text-[#eee] mb-12 md:text-2xl text-xl font-medium"
+        >
           Transformez votre espace avec notre collection de meubles exquis..
-        </p>
+        </motion.p>
         <Link
+          whileInView={{ x: 0, opacity: 100 }}
+          initial={{ x: -50, opacity: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
           spy={true}
           smooth={true}
           offset={0}

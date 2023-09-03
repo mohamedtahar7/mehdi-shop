@@ -1,13 +1,18 @@
-import React from 'react'
-const FeatureCard = ({name,description,icon}) => {
+import { motion } from "framer-motion";
+const FeatureCard = ({ name, icon, transition }) => {
   return (
-    <div className='w-[80%]'>
-        <div className='flex flex-col gap-2'>
-          {icon}
-          <h4 className='text-[#11334f] lg:text-2xl text-xl mt-6 font-semibold'>{name}</h4>
-        </div>  
-    </div>
-  )
-}
+    <motion.div
+      whileInView={{ x: 0, opacity: 100 }}
+      initial={{ x: -50, opacity: 0 }}
+      transition={{ delay: 0.2, duration: transition }}
+      className="w-[80%]"
+    >
+      <div className="flex flex-col gap-2">
+        {icon}
+        <h4 className="text-[#11334f] text-xl mt-6 font-semibold">{name}</h4>
+      </div>
+    </motion.div>
+  );
+};
 
-export default FeatureCard
+export default FeatureCard;
