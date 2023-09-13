@@ -128,7 +128,7 @@ const ProductDetails = () => {
         <Carousel responsive={responsive}>
           {similarProducts.map((item) => (
             <SimilarProductsCard
-              id={item.id}
+              id={item._id}
               key={item.id}
               name={item.name}
               price={item.price}
