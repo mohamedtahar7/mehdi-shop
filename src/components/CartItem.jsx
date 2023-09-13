@@ -13,7 +13,7 @@ const CartItem = ({ item }) => {
         <div>
           <img
             className="w-[100%] rounded-lg"
-            src={item.image || item.images[0].image}
+            src={item.image || item.images[0]}
             alt="image"
           />
         </div>

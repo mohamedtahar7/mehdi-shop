@@ -40,7 +40,6 @@ const CheckoutContact = ({ sucessOrder, setSuccessOrder }) => {
         }
       );
   };
-  console.log(cart);
   return (
     <form
       id="checkoutForm"

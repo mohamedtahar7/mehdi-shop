@@ -3,16 +3,17 @@ import Pagination from "./Pagination";
 import { useState, useEffect } from "react";
 import { chairs } from "../utils/chairs";
 import { tables } from "../utils/tables";
-import { products } from "../utils/products";
 import { meubles } from "../utils/meubles";
 import { banquettes } from "../utils/banquettes";
 // import { categories } from "../utils/categories";
 import Header from "./Header";
 import { PageContext } from "../contexts/PageContext";
+import { ProductContext } from "../contexts/ProductContext";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { CategoryContext } from "../contexts/CategoryContext";
 const Products = () => {
+  const { products } = useContext(ProductContext);
   const { categories, category, setCategory } = useContext(CategoryContext);
   // const [category, setCategory] = useState('Tout')
   // const [currentPage, setCurrentPage] = useState(1);
@@ -76,11 +77,11 @@ const Products = () => {
               .map((product, index) => (
                 <ProductCard
                   index={index}
-                  id={product.id}
-                  key={product.id}
+                  id={product._id}
+                  key={index}
                   name={product.name}
                   price={product.price}
-                  image={product.images[0].image}
+                  image={product.images[0]}
                 />
               ))}
           </div>
@@ -103,11 +104,11 @@ const Products = () => {
                   .map((chair, index) => (
                     <ProductCard
                       index={index}
-                      id={chair.id}
+                      id={chair._id}
                       key={chair.id}
                       name={chair.name}
                       price={chair.price}
-                      image={chair.images[0].image}
+                      image={chair.images[0]}
                     />
                   ))
               : products
@@ -115,11 +116,11 @@ const Products = () => {
                   .map((chair, index) => (
                     <ProductCard
                       index={index}
-                      id={chair.id}
+                      id={chair._id}
                       key={chair.id}
                       name={chair.name}
                       price={chair.price}
-                      image={chair.images[0].image}
+                      image={chair.images[0]}
                     />
                   ))}
           </div>
@@ -142,11 +143,11 @@ const Products = () => {
                   .map((table, index) => (
                     <ProductCard
                       index={index}
-                      id={table.id}
+                      id={table._id}
                       key={table.id}
                       name={table.name}
                       price={table.price}
-                      image={table.images[0].image}
+                      image={table.images[0]}
                     />
                   ))
               : products
@@ -154,11 +155,11 @@ const Products = () => {
                   .map((table, index) => (
                     <ProductCard
                       index={index}
-                      id={table.id}
+                      id={table._id}
                       key={table.id}
                       name={table.name}
                       price={table.price}
-                      image={table.images[0].image}
+                      image={table.images[0]}
                     />
                   ))}
           </div>
@@ -181,11 +182,11 @@ const Products = () => {
                   .map((table, index) => (
                     <ProductCard
                       index={index}
-                      id={table.id}
+                      id={table._id}
                       key={table.id}
                       name={table.name}
                       price={table.price}
-                      image={table.images[0].image}
+                      image={table.images[0]}
                     />
                   ))
               : products
@@ -193,11 +194,11 @@ const Products = () => {
                   .map((table, index) => (
                     <ProductCard
                       index={index}
-                      id={table.id}
+                      id={table._id}
                       key={table.id}
                       name={table.name}
                       price={table.price}
-                      image={table.images[0].image}
+                      image={table.images[0]}
                     />
                   ))}
           </div>
@@ -220,11 +221,11 @@ const Products = () => {
                   .map((table, index) => (
                     <ProductCard
                       index={index}
-                      id={table.id}
+                      id={table._id}
                       key={table.id}
                       name={table.name}
                       price={table.price}
-                      image={table.images[0].image}
+                      image={table.images[0]}
                     />
                   ))
               : products
@@ -232,11 +233,11 @@ const Products = () => {
                   .map((table, index) => (
                     <ProductCard
                       index={index}
-                      id={table.id}
+                      id={table._id}
                       key={table.id}
                       name={table.name}
                       price={table.price}
-                      image={table.images[0].image}
+                      image={table.images[0]}
                     />
                   ))}
           </div>

@@ -3,19 +3,20 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useState } from "react";
 import { useContext, useEffect } from "react";
-import { products } from "../utils/products";
 import { CartContext } from "../contexts/CartContext";
+import { ProductContext } from "../contexts/ProductContext";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SimilarProductsCard from "../components/SimilarProductsCard";
 const ProductDetails = () => {
   const { id } = useParams();
+  const { products } = useContext(ProductContext);
   const [activeColor, setActiveColor] = useState("");
   const { addToCart, cart } = useContext(CartContext);
-  const product = products.find((item) => item.id === id);
+  const product = products.find((item) => item._id === id);
   const { name, price, images, category } = product;
   const similarProducts = products.filter(
-    (prod) => prod.category === category && prod.id !== id
+    (prod) => prod.category === category && prod._id !== id
   );
   const productToCart = {
     name,
@@ -46,7 +47,6 @@ const ProductDetails = () => {
   useEffect(() => {
     document.title = `${product.name}`;
   }, []);
-  console.log(productToCart);
   return (
     <div>
       <Header />
@@ -56,13 +56,13 @@ const ProductDetails = () => {
         <div className="flex relative flex-col gap-6">
           {shownImg === 1 ? (
             <img
-              src={product.images[1].image}
+              src={product.images[1]}
               alt="image"
               className="w-[100%] rounded-lg"
             />
           ) : (
             <img
-              src={product.images[0].image}
+              src={product.images[0]}
               alt="image"
               className="w-[100%] rounded-lg"
             />
@@ -71,7 +71,7 @@ const ProductDetails = () => {
             {product.images.map((image, index) => (
               <img
                 onClick={() => setShownImg(index)}
-                src={image.image}
+                src={image}
                 alt="image"
                 className="sm:w-[25%] w-[35%] rounded-lg cursor-pointer hover:opacity-80"
                 key={index}
@@ -92,7 +92,7 @@ const ProductDetails = () => {
               Dimensions : {product.dimensions}
             </p>
           )}
-          {product.colors && (
+          {product.colors.length > 0 && (
             <div>
               <p className="text-xl text-[#11334f] mt-8 mb-4">Couleurs:</p>
               <div className="flex gap-4 items-center">
@@ -132,7 +132,7 @@ const ProductDetails = () => {
               key={item.id}
               name={item.name}
               price={item.price}
-              image={item.images[0].image}
+              image={item.images[0]}
             />
           ))}
         </Carousel>
