@@ -12,8 +12,9 @@ import { ProductContext } from "../contexts/ProductContext";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { CategoryContext } from "../contexts/CategoryContext";
+import Spinner from "./Spinner";
 const Products = () => {
-  const { products } = useContext(ProductContext);
+  const { products, loading } = useContext(ProductContext);
   const { categories, category, setCategory } = useContext(CategoryContext);
   // const [category, setCategory] = useState('Tout')
   // const [currentPage, setCurrentPage] = useState(1);
@@ -22,21 +23,6 @@ const Products = () => {
   const lastProductIndex = currentPage * productPerPage;
   const firstProductIndex = lastProductIndex - productPerPage;
   const currentProducts = products.slice(firstProductIndex, lastProductIndex);
-  useEffect(() => {
-    // Get the hash from the URL (e.g., "#contact")
-    const hash = window.location.hash;
-
-    // If there is a hash, remove the "#" symbol to get the element ID
-    const id = hash ? hash.slice(1) : null;
-
-    // If there is an element ID, scroll to it
-    if (id) {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, []);
   return (
     <section id="products">
       <div className="h-auto py-40 px-20">
@@ -70,192 +56,198 @@ const Products = () => {
             ))}
           </div>
         </div>
-        {category === "Tout" && (
-          <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {products
-              .slice(firstProductIndex, lastProductIndex)
-              .map((product, index) => (
-                <ProductCard
-                  index={index}
-                  id={product._id}
-                  key={index}
-                  name={product.name}
-                  price={product.price}
-                  image={product.images[0]}
-                />
-              ))}
-          </div>
-        )}
-        {category === "Tout" && (
-          <Pagination
-            totalProducts={products.length}
-            productPerPage={productPerPage}
-            setCurrrentPage={setCurrentPage}
-            currentPage={currentPage}
-          />
-        )}
-        {category === "Chaises" && (
-          <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {products.filter((item) => item.category === category).length >
-            productPerPage
-              ? products
-                  .filter((item) => item.category === category)
+        {loading ? (
+          <Spinner />
+        ) : (
+          <div>
+            {category === "Tout" && (
+              <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
+                {products
                   .slice(firstProductIndex, lastProductIndex)
-                  .map((chair, index) => (
+                  .map((product, index) => (
                     <ProductCard
                       index={index}
-                      id={chair._id}
-                      key={chair.id}
-                      name={chair.name}
-                      price={chair.price}
-                      image={chair.images[0]}
-                    />
-                  ))
-              : products
-                  .filter((item) => item.category === category)
-                  .map((chair, index) => (
-                    <ProductCard
-                      index={index}
-                      id={chair._id}
-                      key={chair.id}
-                      name={chair.name}
-                      price={chair.price}
-                      image={chair.images[0]}
+                      id={product._id}
+                      key={index}
+                      name={product.name}
+                      price={product.price}
+                      image={product.images[0]}
                     />
                   ))}
-          </div>
-        )}
-        {category === "Chaises" && (
-          <Pagination
-            totalProducts={chairs.length}
-            productPerPage={productPerPage}
-            setCurrrentPage={setCurrentPage}
-            currentPage={currentPage}
-          />
-        )}
-        {category === "Tables" && (
-          <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {products.filter((item) => item.category === category).length >
-            productPerPage
-              ? products
-                  .filter((item) => item.category === category)
-                  .slice(firstProductIndex, lastProductIndex)
-                  .map((table, index) => (
-                    <ProductCard
-                      index={index}
-                      id={table._id}
-                      key={table.id}
-                      name={table.name}
-                      price={table.price}
-                      image={table.images[0]}
-                    />
-                  ))
-              : products
-                  .filter((item) => item.category === category)
-                  .map((table, index) => (
-                    <ProductCard
-                      index={index}
-                      id={table._id}
-                      key={table.id}
-                      name={table.name}
-                      price={table.price}
-                      image={table.images[0]}
-                    />
-                  ))}
-          </div>
-        )}
-        {category === "Tables" && (
-          <Pagination
-            totalProducts={tables.length}
-            productPerPage={productPerPage}
-            setCurrrentPage={setCurrentPage}
-            currentPage={currentPage}
-          />
-        )}
-        {category === "Meubles" && (
-          <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {products.filter((item) => item.category === category).length >
-            productPerPage
-              ? products
-                  .filter((item) => item.category === category)
-                  .slice(firstProductIndex, lastProductIndex)
-                  .map((table, index) => (
-                    <ProductCard
-                      index={index}
-                      id={table._id}
-                      key={table.id}
-                      name={table.name}
-                      price={table.price}
-                      image={table.images[0]}
-                    />
-                  ))
-              : products
-                  .filter((item) => item.category === category)
-                  .map((table, index) => (
-                    <ProductCard
-                      index={index}
-                      id={table._id}
-                      key={table.id}
-                      name={table.name}
-                      price={table.price}
-                      image={table.images[0]}
-                    />
-                  ))}
-          </div>
-        )}
-        {category === "Meubles" && (
-          <Pagination
-            totalProducts={meubles.length}
-            productPerPage={productPerPage}
-            setCurrrentPage={setCurrentPage}
-            currentPage={currentPage}
-          />
-        )}
-        {category === "Banquettes" && (
-          <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
-            {products.filter((item) => item.category === category).length >
-            productPerPage
-              ? products
-                  .filter((item) => item.category === category)
-                  .slice(firstProductIndex, lastProductIndex)
-                  .map((table, index) => (
-                    <ProductCard
-                      index={index}
-                      id={table._id}
-                      key={table.id}
-                      name={table.name}
-                      price={table.price}
-                      image={table.images[0]}
-                    />
-                  ))
-              : products
-                  .filter((item) => item.category === category)
-                  .map((table, index) => (
-                    <ProductCard
-                      index={index}
-                      id={table._id}
-                      key={table.id}
-                      name={table.name}
-                      price={table.price}
-                      image={table.images[0]}
-                    />
-                  ))}
-          </div>
-        )}
-        {category === "Banquettes" && (
-          <Pagination
-            totalProducts={banquettes.length}
-            productPerPage={productPerPage}
-            setCurrrentPage={setCurrentPage}
-            currentPage={currentPage}
-          />
-        )}
-        {/* <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
+              </div>
+            )}
+            {category === "Tout" && (
+              <Pagination
+                totalProducts={products.length}
+                productPerPage={productPerPage}
+                setCurrrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
+            )}
+            {category === "Chaises" && (
+              <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
+                {products.filter((item) => item.category === category).length >
+                productPerPage
+                  ? products
+                      .filter((item) => item.category === category)
+                      .slice(firstProductIndex, lastProductIndex)
+                      .map((chair, index) => (
+                        <ProductCard
+                          index={index}
+                          id={chair._id}
+                          key={chair.id}
+                          name={chair.name}
+                          price={chair.price}
+                          image={chair.images[0]}
+                        />
+                      ))
+                  : products
+                      .filter((item) => item.category === category)
+                      .map((chair, index) => (
+                        <ProductCard
+                          index={index}
+                          id={chair._id}
+                          key={chair.id}
+                          name={chair.name}
+                          price={chair.price}
+                          image={chair.images[0]}
+                        />
+                      ))}
+              </div>
+            )}
+            {category === "Chaises" && (
+              <Pagination
+                totalProducts={chairs.length}
+                productPerPage={productPerPage}
+                setCurrrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
+            )}
+            {category === "Tables" && (
+              <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
+                {products.filter((item) => item.category === category).length >
+                productPerPage
+                  ? products
+                      .filter((item) => item.category === category)
+                      .slice(firstProductIndex, lastProductIndex)
+                      .map((table, index) => (
+                        <ProductCard
+                          index={index}
+                          id={table._id}
+                          key={table.id}
+                          name={table.name}
+                          price={table.price}
+                          image={table.images[0]}
+                        />
+                      ))
+                  : products
+                      .filter((item) => item.category === category)
+                      .map((table, index) => (
+                        <ProductCard
+                          index={index}
+                          id={table._id}
+                          key={table.id}
+                          name={table.name}
+                          price={table.price}
+                          image={table.images[0]}
+                        />
+                      ))}
+              </div>
+            )}
+            {category === "Tables" && (
+              <Pagination
+                totalProducts={tables.length}
+                productPerPage={productPerPage}
+                setCurrrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
+            )}
+            {category === "Meubles" && (
+              <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
+                {products.filter((item) => item.category === category).length >
+                productPerPage
+                  ? products
+                      .filter((item) => item.category === category)
+                      .slice(firstProductIndex, lastProductIndex)
+                      .map((table, index) => (
+                        <ProductCard
+                          index={index}
+                          id={table._id}
+                          key={table.id}
+                          name={table.name}
+                          price={table.price}
+                          image={table.images[0]}
+                        />
+                      ))
+                  : products
+                      .filter((item) => item.category === category)
+                      .map((table, index) => (
+                        <ProductCard
+                          index={index}
+                          id={table._id}
+                          key={table.id}
+                          name={table.name}
+                          price={table.price}
+                          image={table.images[0]}
+                        />
+                      ))}
+              </div>
+            )}
+            {category === "Meubles" && (
+              <Pagination
+                totalProducts={meubles.length}
+                productPerPage={productPerPage}
+                setCurrrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
+            )}
+            {category === "Banquettes" && (
+              <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
+                {products.filter((item) => item.category === category).length >
+                productPerPage
+                  ? products
+                      .filter((item) => item.category === category)
+                      .slice(firstProductIndex, lastProductIndex)
+                      .map((table, index) => (
+                        <ProductCard
+                          index={index}
+                          id={table._id}
+                          key={table.id}
+                          name={table.name}
+                          price={table.price}
+                          image={table.images[0]}
+                        />
+                      ))
+                  : products
+                      .filter((item) => item.category === category)
+                      .map((table, index) => (
+                        <ProductCard
+                          index={index}
+                          id={table._id}
+                          key={table.id}
+                          name={table.name}
+                          price={table.price}
+                          image={table.images[0]}
+                        />
+                      ))}
+              </div>
+            )}
+            {category === "Banquettes" && (
+              <Pagination
+                totalProducts={banquettes.length}
+                productPerPage={productPerPage}
+                setCurrrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
+            )}
+            {/* <div className='grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12'>
           {chairs.map((chair)=>(
             <ProductCard id={chair.id} key={chair.id} name={chair.name} price={chair.price}
             image={chair.images[0].image}/>
           ))}
         </div> */}
+          </div>
+        )}
       </div>
     </section>
   );
