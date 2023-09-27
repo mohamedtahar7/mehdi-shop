@@ -15,7 +15,7 @@ const ProductCard = ({ image, index, price, name, id }) => {
     >
       <div className="group-hover:opacity-80 group-hover:cursor-pointer">
         <img
-          className="w-[2822px] h-[2812px] rounded-xl"
+          className="w-[90%] h-[90%] rounded-xl"
           src={image}
           alt="uniconfort product"
         />
