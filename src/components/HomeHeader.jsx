@@ -45,7 +45,7 @@ const HomeHeader = () => {
           ) : (
             <img
               className="sm:w-48 w-40"
-              src={logoB}
+              src={logoW}
               alt="uniconfort meuble logo"
             />
           )}
