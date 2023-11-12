@@ -1,12 +1,11 @@
 import ProductCard from "./ProductCard";
 import Pagination from "./Pagination";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { chairs } from "../utils/chairs";
 import { tables } from "../utils/tables";
 import { meubles } from "../utils/meubles";
 import { banquettes } from "../utils/banquettes";
 // import { categories } from "../utils/categories";
-import Header from "./Header";
 import { PageContext } from "../contexts/PageContext";
 import { ProductContext } from "../contexts/ProductContext";
 import { motion } from "framer-motion";

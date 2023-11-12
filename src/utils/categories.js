@@ -1,7 +1,9 @@
 export const categories = [
-    'Tout',
-    'Chaises',
-    'Tables',
-    'Meubles',
-    'Banquettes',
-]
+  "Tout",
+  "Chaises",
+  "Tables",
+  "Meubles",
+  "Lits",
+  "Salons",
+  "Banquettes",
+];
