@@ -200,6 +200,88 @@ const Products = () => {
                 currentPage={currentPage}
               />
             )}
+            {category === "Lits" && (
+              <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
+                {products.filter((item) => item.category === category).length >
+                productPerPage
+                  ? products
+                      .filter((item) => item.category === category)
+                      .slice(firstProductIndex, lastProductIndex)
+                      .map((table, index) => (
+                        <ProductCard
+                          index={index}
+                          id={table._id}
+                          key={table.id}
+                          name={table.name}
+                          price={table.price}
+                          image={table.images[0]}
+                        />
+                      ))
+                  : products
+                      .filter((item) => item.category === category)
+                      .map((table, index) => (
+                        <ProductCard
+                          index={index}
+                          id={table._id}
+                          key={table.id}
+                          name={table.name}
+                          price={table.price}
+                          image={table.images[0]}
+                        />
+                      ))}
+              </div>
+            )}
+            {category === "Lits" && (
+              <Pagination
+                totalProducts={
+                  products.filter((item) => item.category === "Lits").length
+                }
+                productPerPage={productPerPage}
+                setCurrrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
+            )}
+            {category === "Salons" && (
+              <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
+                {products.filter((item) => item.category === category).length >
+                productPerPage
+                  ? products
+                      .filter((item) => item.category === category)
+                      .slice(firstProductIndex, lastProductIndex)
+                      .map((table, index) => (
+                        <ProductCard
+                          index={index}
+                          id={table._id}
+                          key={table.id}
+                          name={table.name}
+                          price={table.price}
+                          image={table.images[0]}
+                        />
+                      ))
+                  : products
+                      .filter((item) => item.category === category)
+                      .map((table, index) => (
+                        <ProductCard
+                          index={index}
+                          id={table._id}
+                          key={table.id}
+                          name={table.name}
+                          price={table.price}
+                          image={table.images[0]}
+                        />
+                      ))}
+              </div>
+            )}
+            {category === "Salons" && (
+              <Pagination
+                totalProducts={
+                  products.filter((item) => item.category === "Lits").length
+                }
+                productPerPage={productPerPage}
+                setCurrrentPage={setCurrentPage}
+                currentPage={currentPage}
+              />
+            )}
             {category === "Banquettes" && (
               <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 py-12">
                 {products.filter((item) => item.category === category).length >
