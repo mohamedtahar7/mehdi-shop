@@ -8,7 +8,7 @@ const FeatureCard = ({ name, icon, transition }) => {
       className="w-[80%]"
     >
       <div className="flex flex-col gap-2">
-        {icon}
+        <img className="w-[40%]" src={icon} alt="feature icon" />
         <h4 className="text-[#11334f] text-xl mt-6 font-semibold">{name}</h4>
       </div>
     </motion.div>
